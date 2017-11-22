@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exceptionconcert
-  helper_methods :current_user, :signed_in?
+  protect_from_forgery with: :exception
+  helper_method :current_user, :signed_in?
 
   def current_user
     @current_user ||= User.find_by(session_token: session[:session_token])
@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
+
 
 end
