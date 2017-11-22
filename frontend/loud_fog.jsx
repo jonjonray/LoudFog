@@ -9,5 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById("root");
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.signout = SessionApiUtil.signout;
   ReactDOM.render(<Root store={store} />, root );
 });
