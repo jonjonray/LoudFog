@@ -1,29 +1,29 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
   constructor(props) {
     super(props);
     if (props.match.path === "/login") {
-      this.state = {user: {username: "", password: ""}, errors: []};
+      this.state = {username: "", password: ""};
     } else {
-      this.state = {user: {username: "", password: "", email: ""}, errors: []};
+      this.state = {username: "", password: "", email: ""};
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-
-
+    this.escapeHandle = this.escapeHandle.bind(this);
+    this.redirect = undefined;
   }
 
   update(field) {
-    return e => this.setState({
-      user: {[field]: e.currentTarget.value
-    }});
+    return e => this.setState(
+      {[field]: e.currentTarget.value
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state.user);
+    this.props.action(this.state);
   }
 
   renderErrors() {
@@ -38,12 +38,24 @@ class SessionForm extends React.Component {
     );
   }
 
-  clearErrors() {
-    this.props.errors = [];
+  componentDidMount(){
+    this.usernameInput.focus();
+    document.addEventListener("keydown", this.escapeHandle);
   }
 
-  componentDidMount(){
-    this.clearErrors();
+  escapeHandle(event){
+    switch ( event.keyCode ) {
+      case 27:
+        console.log("I AM HERE");
+        this.redirect = <Redirect to="/" />;
+        break;
+      default:
+        break;
+    }
+  }
+
+  componentWillUnmount(){
+    this.props.receiveErrors([]);
   }
 
   render(){
@@ -63,6 +75,7 @@ class SessionForm extends React.Component {
 
               <input type="text"
                 className="auth-input"
+                ref={(input) => {this.usernameInput = input; }}
                 onChange={this.update("username")}
                 value={this.state.username}
                 placeholder="Username" />
