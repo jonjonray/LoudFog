@@ -46,8 +46,7 @@ class SessionForm extends React.Component {
   escapeHandle(event){
     switch ( event.keyCode ) {
       case 27:
-        console.log("I AM HERE");
-        this.redirect = <Redirect to="/" />;
+        this.props.history.push("/");
         break;
       default:
         break;
@@ -106,4 +105,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
