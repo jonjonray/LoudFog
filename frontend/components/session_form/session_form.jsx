@@ -6,27 +6,29 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     if (props.match.path === "/login") {
-      this.state = {username: "", password: ""};
+      this.state = {user: {username: "", password: ""}, errors: []};
     } else {
-      this.state = {username: "", password: "", email: ""};
+      this.state = {user: {username: "", password: "", email: ""}, errors: []};
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+
+
   }
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+      user: {[field]: e.currentTarget.value
+    }});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    this.props.action(this.state.user);
   }
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -36,6 +38,13 @@ class SessionForm extends React.Component {
     );
   }
 
+  clearErrors() {
+    this.props.errors = [];
+  }
+
+  componentDidMount(){
+    this.clearErrors();
+  }
 
   render(){
     let formName = this.props.match.path === "/login" ? "Log In" : "Sign Up";
@@ -49,6 +58,9 @@ class SessionForm extends React.Component {
 
         <div className="modal-form">
           <form onSubmit={this.handleSubmit}>
+
+            {this.renderErrors()}
+
               <input type="text"
                 className="auth-input"
                 onChange={this.update("username")}

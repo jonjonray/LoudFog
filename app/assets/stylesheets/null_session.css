@@ -84,7 +84,7 @@
 
   .bannerhead-content {
     position: absolute;
-    left: 558px;;
+    left: 531px;
     bottom: 74px;
     font-size: xx-large;
     color: white;
@@ -93,5 +93,10 @@
   }
 
   .null-session-content {
-
+    height: 500px;
+    width: 1600px;
+    background-color: white;
+    position: absolute;
+    left: 133px;
+    width: 1624px;
   }

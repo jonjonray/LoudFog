@@ -4,9 +4,10 @@ import SessionForm from './session_form';
 
 
 const mapStateToProps = (state) => {
+  let errors = state.errors.session.responseJSON ? state.errors.session.responseJSON : [] ;
   return {
     loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session
+    errors
   };
 };
 

@@ -23,7 +23,8 @@ export const signup = user => dispatch => {
 export const signin = user => dispatch => {
   APIUtil.signin(user).then(
     currentUser => dispatch(
-      receiveCurrentUser(currentUser)));
+      receiveCurrentUser(currentUser)) ,
+      (error) => dispatch(receiveErrors(error)));
 };
 
 export const signout = () => dispatch => {
