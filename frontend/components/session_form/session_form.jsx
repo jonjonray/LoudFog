@@ -38,46 +38,42 @@ class SessionForm extends React.Component {
 
 
   render(){
-    let formName = this.props.match.path === "/login" ? "Login" : "Sign Up";
+    let formName = this.props.match.path === "/login" ? "Log In" : "Sign Up";
     return (
       <div className="modal">
-        <Link to={"/"} className="exit-button">
-          &#10005
-        </Link>
-        
+      <Link to={"/"} className="exit-button">
         <div className="modal-shade">
         </div>
+      </Link>
+
 
         <div className="modal-form">
           <form onSubmit={this.handleSubmit}>
-            <label>Username
               <input type="text"
                 className="auth-input"
                 onChange={this.update("username")}
-                value={this.state.username} />
-            </label>
+                value={this.state.username}
+                placeholder="Username" />
 
               {
                (formName === "Sign Up") ?
-                <label>Email
                   <input type="text"
                     className="auth-input"
                     onChange={this.update("email")}
-                    value={this.state.email} />
-                </label>
+                    value={this.state.email}
+                    placeholder="Email" />
               : null
             }
 
-            <label>Password
               <input type="password"
-                className="auth-input"
                 onChange={this.update("password")}
-                value={this.state.password} />
-            </label>
+                value={this.state.password}
+                className="auth-input"
+                placeholder="Password" />
 
             <input type="submit"
                value={formName}
-               className="authSubmit" />
+               className="auth-submit" />
           </form>
         </div>
     </div>
