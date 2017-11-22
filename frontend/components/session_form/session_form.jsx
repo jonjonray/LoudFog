@@ -41,6 +41,10 @@ class SessionForm extends React.Component {
     let formName = this.props.match.path === "/login" ? "Login" : "Sign Up";
     return (
       <div className="modal">
+        <Link to={"/"} className="exit-button">
+          &#10005
+        </Link>
+        
         <div className="modal-shade">
         </div>
 
@@ -71,7 +75,9 @@ class SessionForm extends React.Component {
                 value={this.state.password} />
             </label>
 
-            <input type="submit" value={formName} />
+            <input type="submit"
+               value={formName}
+               className="authSubmit" />
           </form>
         </div>
     </div>
