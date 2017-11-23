@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.escapeHandle = this.escapeHandle.bind(this);
+    this.demoHandleSubmit = this.demoHandleSubmit.bind(this);
 
   }
 
@@ -100,6 +101,11 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 className="auth-input"
                 placeholder="Password" />
+
+              <button className="auth-submit guest"
+                onClick={this.demoHandleSubmit}>
+                Guest
+              </button>
 
             <input type="submit"
                value={formName}

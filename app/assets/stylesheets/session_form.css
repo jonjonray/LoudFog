@@ -1,6 +1,6 @@
 .modal-shade {
   position: fixed;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.7);
     top: 0;
     bottom: 0;
     left: 0;
@@ -41,12 +41,16 @@
   line-height: 4px;;
   top: 386px;;
   background-color: #f48342;
-  left: 39%;
+  left: 55%;
+}
+
+.guest {
+  left: 27%;
 }
 
 .auth-submit:hover {
   cursor: pointer;
-  
+
 }
 
 .auth-input {

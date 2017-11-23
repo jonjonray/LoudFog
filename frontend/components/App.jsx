@@ -10,7 +10,7 @@ import SessionFormContainer
   from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NullSession from './null_session';
-import SongIndexContainer from './songs/song_index';
+import SongIndexContainer from './songs/song_index_container';
 
 
 const App = () => (

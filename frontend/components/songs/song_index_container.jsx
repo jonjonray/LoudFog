@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({});
 
 
 const mapDispatchToProps = (dispatch) => {
-  return { signout: () => dispatch(signout) };
+  return { signout: () => dispatch( signout()) };
 };
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SongIndex));
+export default
+  withRouter(connect(mapStateToProps,mapDispatchToProps)(SongIndex));

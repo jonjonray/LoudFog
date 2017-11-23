@@ -6,10 +6,10 @@ class SongIndex extends React.Component {
   constructor(props){
     super(props);
     this.handleSignOut = this.handleSignOut.bind(this);
+    console.log(this.props);
   }
 
   handleSignOut(e){
-    debugger;
     e.preventDefault();
     this.props.signout();
     this.props.history.push("/");
