@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bcrypt'
 gem 'pg'
+gem 'rack-test'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,9 +43,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'jquery-rails'
+
   gem 'better_errors'
-  gem 'rack-test'
+
 end
 
 group :development do
