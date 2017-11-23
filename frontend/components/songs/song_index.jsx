@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import NavBarContainer from '../navbar/navbar_container';
 class SongIndex extends React.Component {
 
   constructor(props){
@@ -17,7 +17,7 @@ class SongIndex extends React.Component {
   render() {
     return (
       <div>
-        SONG INDEX
+        <NavBarContainer />
         <button onClick={this.handleSignOut}> Sign Out</button>
       </div>
   );

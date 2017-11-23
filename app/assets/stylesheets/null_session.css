@@ -10,8 +10,7 @@
     background-size: cover;
     background-position: center;
     font-family: 'Raleway', sans-serif;
-    width: 1600px;
-    left: 133.5px;;
+    width: 100%;
 
   }
 
@@ -94,9 +93,16 @@
 
   .null-session-content {
     height: 500px;
-    width: 1600px;
     background-color: white;
     position: absolute;
-    left: 133px;
-    width: 1624px;
+    width:100%;
+    padding: 11px;
+  }
+
+
+  .null-session-body {
+    width: 85%;
+    left: 133.5px;
+    position: relative;
+    z-index: -1;
   }
