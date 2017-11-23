@@ -79,6 +79,17 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
 
+            <div className="banner">
+              <div className="banner-text">LOUDFOG</div>
+
+            {
+              (formName === "Sign In") ?
+              <div className="banner-text welcome">
+                <br></br>
+                Welcome Back
+              </div> : null
+            }
+            </div>
 
 
               <input type="text"
@@ -103,6 +114,8 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 className="auth-input password"
                 placeholder="Password" />
+
+          <div className="button-container">
             <input type="submit"
                value={formName}
                className={`auth-submit ${formName}`} />
@@ -115,6 +128,7 @@ class SessionForm extends React.Component {
                </button>
                : null
              }
+             </div>
           </form>
           </div>
         </div>

@@ -27,6 +27,7 @@
   flex-direction: column;
   height: 400px;
   justify-content: flex-end;
+  margin-bottom: 27px;
 
 }
 
@@ -76,6 +77,7 @@
   list-style: none;
   position: absolute;
   font-size: 12px;
+  left: 43px;
 }
 
 .Up {
@@ -84,4 +86,16 @@
 
 .modal-form-content {
   position: relative;
+  text-align: center;
+}
+
+.banner-text {
+  font-size: xx-large;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.welcome {
+  font-size: large;
 }
