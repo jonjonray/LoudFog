@@ -12,8 +12,6 @@ class NullSession extends React.Component {
     <div className="null-session">
 
       <div className="null-session-body">
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
       <div className="null-session-banner">
 
         <div className="auth-buttons">

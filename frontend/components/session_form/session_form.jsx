@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    let formName = this.props.match.path === "/login" ? "Log In" : "Sign Up";
+    let formName = this.props.match.path === "/login" ? "Sign In" : "Sign Up";
     return (
       <div className="modal">
       <Link to={"/"} className="exit-button">
@@ -75,9 +75,11 @@ class SessionForm extends React.Component {
 
 
         <div className="modal-form">
+          <div className="modal-form-content">
+          {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
 
-            {this.renderErrors()}
+
 
               <input type="text"
                 className="auth-input"
@@ -99,20 +101,22 @@ class SessionForm extends React.Component {
               <input type="password"
                 onChange={this.update("password")}
                 value={this.state.password}
-                className="auth-input"
+                className="auth-input password"
                 placeholder="Password" />
-              {
-                 (formName === "Log In") ?
-              <button className="auth-submit guest"
-                onClick={this.demoHandleSubmit}>
-                Guest
-              </button>
-              : null
-            }
             <input type="submit"
                value={formName}
                className={`auth-submit ${formName}`} />
+
+             {
+               (formName === "Sign In") ?
+               <button className="auth-submit guest"
+                 onClick={this.demoHandleSubmit}>
+                 Guest
+               </button>
+               : null
+             }
           </form>
+          </div>
         </div>
     </div>
     );

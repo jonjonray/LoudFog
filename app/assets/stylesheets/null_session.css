@@ -19,6 +19,7 @@
     align-items: center;
     align-content: center;
     width: 100%;
+    height: auto;
   }
 
   .auth-buttons {
@@ -40,7 +41,7 @@
     color: white;
     padding: 10px;
     text-align: center;
-    line-height: 4px;;
+    line-height: 4px;
   }
 
   .auth-buttons button:hover {
@@ -83,8 +84,8 @@
 
   .bannerhead-content {
     position: absolute;
-    left: 531px;
-    bottom: 74px;
+    left: 33%;
+    bottom: 15%;
     font-size: xx-large;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -102,7 +103,8 @@
 
   .null-session-body {
     width: 85%;
-    left: 133.5px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-    z-index: -1;
+    height: 100%;
   }
