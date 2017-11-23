@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.escapeHandle = this.escapeHandle.bind(this);
-    this.redirect = undefined;
+
   }
 
   update(field) {
@@ -24,6 +24,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state);
+  }
+
+  demoHandleSubmit(e) {
+    e.preventDefault();
+    this.props.action({username: "Demo_User", password: "password"});
   }
 
   renderErrors() {
@@ -55,6 +60,7 @@ class SessionForm extends React.Component {
 
   componentWillUnmount(){
     this.props.receiveErrors([]);
+    document.removeEventListener("keydown", this.escapeHandle);
   }
 
   render(){
