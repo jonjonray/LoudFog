@@ -1,10 +1,60 @@
 .navbar {
   display: block;
-  background: #6c7584;
+  background: linear-gradient(#3f3f3f,#212121);
   height: 50px;
   top: 0px;
   left:0px;
-  position: absolute;
+  position: fixed;
   right: 0px;
-  width: 100%
+  width: 100%;
+  overflow: hidden;
+  border: black 1px solid;
+}
+
+.left {
+  background-color: #f48342;
+  height: 100%;
+  width: 5%;
+  position: absolute;
+  left: 15%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  background: linear-gradient(#f48342,#c4652f)
+}
+
+.right {
+  position: absolute;
+  height:100%;
+  width: 5%;
+  right: 15%;
+}
+
+.signout-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/logout-grey.png);
+  height: 59%;
+  width: 31%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 8px;
+  right:0px;
+
+}
+
+.signout-button:hover {
+  cursor: pointer;
+}
+
+.username {
+  color: #c6c4c2;
+  position: absolute;
+  left: -48px;
+  line-height: 49px;
+  text-transform: uppercase;
+  font-family: sans-serif;
 }

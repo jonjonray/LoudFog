@@ -5,7 +5,7 @@ import NavBar from './navbar';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
-  currentUser: state.currentUser
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
