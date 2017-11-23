@@ -43,6 +43,7 @@ group :development, :test do
   gem 'annotate'
   gem 'jquery-rails'
   gem 'better_errors'
+  gem 'rack-test'
 end
 
 group :development do
