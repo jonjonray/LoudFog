@@ -101,15 +101,17 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 className="auth-input"
                 placeholder="Password" />
-
+              {
+                 (formName === "Log In") ?
               <button className="auth-submit guest"
                 onClick={this.demoHandleSubmit}>
                 Guest
               </button>
-
+              : null
+            }
             <input type="submit"
                value={formName}
-               className="auth-submit" />
+               className={`auth-submit ${formName}`} />
           </form>
         </div>
     </div>
