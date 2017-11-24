@@ -80,10 +80,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('loudfog'),
-    access_key_id: ENV.fetch('AKIAJGSJME7EK5LO6Q2Q'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-west-1'),
+    bucket: ENV.fetch("bucket"),
+    access_key_id: ENV.fetch('access_key'),
+    secret_access_key: ENV.fetch('aws_secret'),
+    s3_region: ENV.fetch('aws_region'),
     }
   }
 
