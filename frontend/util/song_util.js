@@ -15,6 +15,16 @@ export const fetchSongs = () => (
 
 export const updateSong = (song) => (
   $.ajax({
-    method: ""
+    method: "PATCH",
+    url: `api/songs/${song.id}`,
+    data: { song }
   })
-)
+);
+
+export const createSong = (song) => (
+  $.ajax({
+    method: "POST",
+    url: `api/songs`,
+    data: { song }
+  })
+);
