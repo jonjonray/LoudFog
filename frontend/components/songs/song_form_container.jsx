@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchSongs } from '../../actions/song_actions';
+import { fetchSongs, createSong } from '../../actions/song_actions';
 import SongIndex from './song_index';
 import { withRouter } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchSongs
+    createSong: (song) => dispatch(createSong)
   };
 };
 

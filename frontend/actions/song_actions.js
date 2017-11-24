@@ -1,4 +1,4 @@
-import * as SongUtil from '../../util/song_util';
+import * as SongUtil from '../util/song_util';
 
 export const RECEIVE_ALL_SONGS = "RECEIVE_ALL_SONGS";
 export const RECEIVE_SONG = "RECEIVE_SONG";
