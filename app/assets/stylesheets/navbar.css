@@ -19,12 +19,13 @@
   left: 15%;
   text-align: center;
   line-height: 50px;
-  font-size: 13px;
+  font-size: small;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   color: white;
-  background: linear-gradient(#f48342,#c4652f)
+  background: linear-gradient(#f48342,#c4652f);
+  overflow: hidden;
 }
 
 .right {
@@ -41,7 +42,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 8px;
+  top: 20%;
   right:0px;
 
 }
@@ -54,7 +55,8 @@
   color: #c6c4c2;
   position: absolute;
   left: -48px;
-  line-height: 49px;
+  top: 30%;
   text-transform: uppercase;
   font-family: sans-serif;
+  font-size: small;
 }

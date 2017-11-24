@@ -11,8 +11,11 @@ class SongIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="song-index">
         <NavBarContainer />
+        <div className="song-index-body">
+
+        </div>
       </div>
   );
   }
