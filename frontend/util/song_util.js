@@ -28,3 +28,10 @@ export const createSong = (song) => (
     data: { song }
   })
 );
+
+export const deleteSong = (id) => (
+  $.ajax({
+    method: "DELETE",
+    url: `api/songs/${id}`
+  })
+);
