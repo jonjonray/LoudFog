@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash/merge';
 
 class SongForm extends React.Component {
   constructor(props){
@@ -19,9 +20,13 @@ class SongForm extends React.Component {
     this.setState({title: e.target.value});
   }
 
-  handleUpload(){
+  handleUpload(e){
+    e.preventDefault();
+    const file = e.currentTarget.files[0];
     
+
   }
+
 
   handleSubmit(e){
     e.preventDefault();
