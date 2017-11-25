@@ -16,7 +16,6 @@ class SongIndex extends React.Component {
       <div className="song-index">
         <NavBarContainer />
         <div className="song-index-body">
-          <SongFormContainer />
         </div>
       </div>
   );

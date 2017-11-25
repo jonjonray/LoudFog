@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-.modal-shade {
+.song-modal-shade {
   position: fixed;
     background: rgba(0, 0, 0, 0.7);
     top: 0;
@@ -32,12 +32,13 @@
     z-index: 11;
 }
 
-.modal-form {
+.song-modal-form {
   position: absolute;
-  top: 10%;
-  margin-left: auto;
-  margin-right: auto;
+  top: 100px;
+  left: 50%;
+  margin-left: -220px;
   width: 360px;
+  padding: 20px;
   background: #fff;
   z-index: 12;
   border-radius: 5px;
@@ -45,7 +46,7 @@
   height: 300px;
 }
 
-.modal-form form {
+.song-modal-form form {
   display: flex;
   flex-direction: column;
   height: 400px;

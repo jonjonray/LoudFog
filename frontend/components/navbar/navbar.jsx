@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -21,9 +21,11 @@ class NavBar extends React.Component {
           LOUDFOG
         </div>
         <div className="right">
-          <div className="upload-button">
 
-          </div>
+          <Link to={this.props.match.path + "/upload"}>
+          <div className="upload-button"></div>
+          </Link>
+
           <div className="username">
             {this.props.currentUser.username}
           </div>
