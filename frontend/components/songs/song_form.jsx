@@ -14,6 +14,8 @@ class SongForm extends React.Component {
     this.fileName = "Choose a file";
     this.filePlaceholder = this.filePlaceholder.bind(this);
     this.escapeHandle = this.escapeHandle.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateTitle(e){
@@ -22,14 +24,23 @@ class SongForm extends React.Component {
 
   handleUpload(e){
     e.preventDefault();
-    const file = e.currentTarget.files[0];
-    
-
+    this.filePlaceholder(e);
+    const audio = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    let that = this;
+    fileReader.onloadend = () => {
+      that.setState({ audio });
+    };
+ 
+    if (audio) {
+      fileReader.readAsDataURL(audio);
+    }
   }
 
 
   handleSubmit(e){
     e.preventDefault();
+    debugger;
   }
 
   filePlaceholder(e){
@@ -79,12 +90,12 @@ class SongForm extends React.Component {
           <input type="file"
             name="Upload Song"
             className="file-input"
-            onChange={this.filePlaceholder}
+            onChange={this.handleUpload}
             />
           </label>
           <input type="submit"
             className="song-form-submit"
-            value="Upload"/>
+            value="Upload" />
         </form>
       </div>
       );
