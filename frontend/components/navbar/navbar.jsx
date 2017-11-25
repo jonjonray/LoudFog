@@ -21,6 +21,9 @@ class NavBar extends React.Component {
           LOUDFOG
         </div>
         <div className="right">
+          <div className="upload-button">
+
+          </div>
           <div className="username">
             {this.props.currentUser.username}
           </div>

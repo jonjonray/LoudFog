@@ -9,6 +9,7 @@
   width: 100%;
   overflow: hidden;
   border: black 1px solid;
+  z-index: 10;
 }
 
 .left {
@@ -19,7 +20,7 @@
   left: 15%;
   text-align: center;
   line-height: 50px;
-  font-size: small;
+  font-size: x-small;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
@@ -37,12 +38,12 @@
 
 .signout-button {
   background: url(https://s3-us-west-1.amazonaws.com/loudfog/logout-grey.png);
-  height: 59%;
+  height: 36%;
   width: 31%;
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 20%;
+  top: 25%;
   right:0px;
 
 }
@@ -59,4 +60,23 @@
   text-transform: uppercase;
   font-family: sans-serif;
   font-size: small;
+}
+
+.upload-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/grey-plus-sign.png);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  left: -81px;
+  top: 11px;
+}
+
+.upload-box {
+  background: linear-gradient(#3f3f3f,#212121);
+  height: 100%;
+  width: 70%;
+
 }
