@@ -13,7 +13,8 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.escapeHandle = this.escapeHandle.bind(this);
     this.demoHandleSubmit = this.demoHandleSubmit.bind(this);
-
+    this.username = "Demo_User".split("");
+    this.password = "password".split("");
   }
 
   update(field) {
@@ -29,7 +30,21 @@ class SessionForm extends React.Component {
 
   demoHandleSubmit(e) {
     e.preventDefault();
-    this.props.action({username: "Demo_User", password: "password"});
+    this.demoType(this.username, this.password);
+  }
+
+  demoType(username,password){
+    window.setTimeout(() => {
+      if (username.length !== 0){
+        this.setState({username: this.state.username + username.shift()});
+        this.demoType(username,password);
+      } else if (password.length !== 0) {
+        this.setState({password: this.state.password + password.shift()});
+        this.demoType(username,password);
+      } else {
+        this.props.action(this.state);
+      }
+    }, 100);
   }
 
   renderErrors() {
