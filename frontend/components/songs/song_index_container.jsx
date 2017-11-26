@@ -4,9 +4,10 @@ import SongIndex from './song_index';
 import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = (state) => ({
-  songs: Object.keys(state.songs).map((key) => state.songs[key])
-});
+const mapStateToProps = (state) => {
+  let songs = Object.keys(state.songs).map((key) => state.songs[key]);
+  return { songs };
+};
 
 
 const mapDispatchToProps = (dispatch) => {

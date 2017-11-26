@@ -11,12 +11,22 @@ class SongIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.fetchSongs();
+  }
 
   render() {
     return (
       <div className="song-index">
         <NavBarContainer />
         <div className="song-index-body">
+          <ul>
+          {
+            this.props.songs.map((song) => (
+              <SongIndexItem song={song} />
+            ))
+          }
+          </ul>
         </div>
       </div>
   );
