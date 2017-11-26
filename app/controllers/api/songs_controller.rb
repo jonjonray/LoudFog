@@ -39,7 +39,7 @@ class Api::SongsController < ApplicationController
     else
       render json: ["Unable to delete song"], status: 422
     end
-    
+
   end
 
 
@@ -48,7 +48,7 @@ class Api::SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :user_id, :audio)
+    params.require(:song).permit(:title, :user_id, :audio, :image)
   end
 
 end

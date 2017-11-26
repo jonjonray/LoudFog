@@ -30,6 +30,8 @@ class NullSession extends React.Component {
           <div className="title-div"> LOUDFOG </div>
         </div>
 
+
+
         <div className="auth-buttons">
           <Link to={"/login"}>
             <button className="login"> Sign In </button>
@@ -39,8 +41,6 @@ class NullSession extends React.Component {
             <button className="signup"> Sign Up </button>
           </Link>
         </div>
-
-
 
         <div className="bannerhead-content">
           Welcome to the New Era of Music

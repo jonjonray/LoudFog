@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../navbar/navbar_container';
 import SongFormContainer from "./song_form_container";
+import SongIndexItem from './song_index_item';
 
 
 class SongIndex extends React.Component {

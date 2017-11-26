@@ -8,7 +8,9 @@ class SongForm extends React.Component {
       title: "",
       user_id: this.props.currentUser.id,
       audio: null,
-      fileName: "Choose a file"
+      image: null,
+      audioFileName: "Choose a song",
+      imageFileName: "(Optional) Choose your artwork"
     };
     this.updateTitle = this.updateTitle.bind(this);
     this.fileName = "Choose a file";
@@ -24,18 +26,25 @@ class SongForm extends React.Component {
 
   handleUpload(e){
     e.preventDefault();
-    this.filePlaceholder(e);
-    const audio = e.currentTarget.files[0];
+    const type = e.target.name;
+    this.filePlaceholder(e,type);
+    const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     let that = this;
-    fileReader.onloadend = () => {
-      that.setState({ audio });
+    if (type === "Upload Song") {
+      fileReader.onloadend = () => {
+        that.setState({ audio: file });
+      };
+    } else {
+      fileReader.onloadend = () => {
+        that.setState({ image: file });
     };
-
-    if (audio) {
-      fileReader.readAsDataURL(audio);
-    }
   }
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+
+}
 
 
   handleSubmit(e){
@@ -44,13 +53,19 @@ class SongForm extends React.Component {
     requestData.append("song[title]", this.state.title);
     requestData.append("song[user_id]", this.state.user_id);
     requestData.append("song[audio]", this.state.audio);
+    requestData.append("song[image]", this.state.image);
+
 
     this.props.createSong(requestData);
     this.props.history.goBack();
   }
 
-  filePlaceholder(e){
-     this.setState({fileName: e.target.value.split( '\\' ).pop()});
+  filePlaceholder(e, type){
+    if (type === "Upload Artwork") {
+       this.setState({imageFileName: e.target.value.split( '\\' ).pop()});
+    } else {
+      this.setState({audioFileName: e.target.value.split( '\\' ).pop()});
+    }
   }
 
   componentDidMount(){
@@ -92,9 +107,17 @@ class SongForm extends React.Component {
                 placeholder="Title"
                 />
 
-              <label>{this.state.fileName}
+              <label>{this.state.audioFileName}
           <input type="file"
             name="Upload Song"
+            className="file-input"
+            onChange={this.handleUpload}
+            />
+          </label>
+
+          <label>{this.state.imageFileName}
+          <input type="file"
+            name="Upload Artwork"
             className="file-input"
             onChange={this.handleUpload}
             />

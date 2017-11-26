@@ -99,6 +99,7 @@ class SessionForm extends React.Component {
 
             {
               (formName === "Sign In") ?
+
               <div className="banner-text welcome">
                 <br></br>
                 Welcome Back
