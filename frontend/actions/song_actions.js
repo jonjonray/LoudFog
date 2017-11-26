@@ -33,5 +33,5 @@ export const updateSong = (songs) => dispatch => (
 );
 
 export const createSong = (songs) => dispatch => (
-  SongUtil.createSong(songs).then(song => dispatch(receiveSong(song)) )
+  SongUtil.createSong(songs).then(song => dispatch(receiveAllSongs(song)) )
 );

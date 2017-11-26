@@ -81,6 +81,7 @@ Rails.application.configure do
   storage: :s3,
   s3_credentials: {
     bucket: ENV.fetch("aws_bucket"),
+    s3_host_name: "s3-us-west-1.amazonaws.com",
     access_key_id: ENV.fetch('access_key'),
     secret_access_key: ENV.fetch('aws_secret'),
     s3_region: ENV.fetch('aws_region'),

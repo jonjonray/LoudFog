@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchSongs
+    fetchSongs: () => dispatch(fetchSongs())
   };
 };
 

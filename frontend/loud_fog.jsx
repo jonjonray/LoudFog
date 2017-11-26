@@ -4,11 +4,11 @@ import * as SessionApiUtil from './util/session_api_util';
 import configureStore from './store/store';
 import ReactDOM from 'react-dom';
 import { receiveErrors } from './actions/session/session_actions';
-
+import * as SongActions from './actions/song_actions';
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById("root");
   let store;
-  
+
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.signout = SessionApiUtil.signout;
   window.signin = SessionApiUtil.signin;
+  window.songActions = SongActions;
   window.receiveErrors = receiveErrors;
   ReactDOM.render(<Root store={store} />, root );
 });
