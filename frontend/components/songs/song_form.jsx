@@ -31,7 +31,7 @@ class SongForm extends React.Component {
     fileReader.onloadend = () => {
       that.setState({ audio });
     };
- 
+
     if (audio) {
       fileReader.readAsDataURL(audio);
     }
@@ -40,7 +40,13 @@ class SongForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
+    const requestData = new FormData();
+    requestData.append("song[title]", this.state.title);
+    requestData.append("song[user_id]", this.state.user_id);
+    requestData.append("song[audio]", this.state.audio);
+
+    this.props.createSong(requestData);
+    this.props.history.goBack();
   }
 
   filePlaceholder(e){

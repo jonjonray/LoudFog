@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'pg'
 gem 'jquery-rails'
-gem 'aws-sdk'
+gem 'aws-sdk', '2.10.47'
 gem 'paperclip'
 gem 'figaro'
 

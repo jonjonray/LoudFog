@@ -48,6 +48,16 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch("aws_bucket"),
+    access_key_id: ENV.fetch('access_key'),
+    secret_access_key: ENV.fetch('aws_secret'),
+    s3_region: ENV.fetch('aws_region'),
+    }
+  }
+
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker

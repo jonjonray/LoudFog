@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createSong: (song) => dispatch(createSong)
+    createSong: (song) => dispatch(createSong(song))
   };
 };
 
@@ -20,3 +20,4 @@ export default
   withRouter(
     connect(mapStateToProps,mapDispatchToProps
     )(SongForm));
+ 
