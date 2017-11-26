@@ -18,7 +18,7 @@ class NavBar extends React.Component {
     return (
       <div className="navbar">
         <div className="left">
-          LOUDFOG
+          <div className="nav-logo"></div>
         </div>
         <div className="right">
 

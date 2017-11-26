@@ -29,6 +29,18 @@
   color: white;
   background: linear-gradient(#f48342,#c4652f);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-logo{
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/cloud-2.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 90%;
+  width: 90%;
 }
 
 .right {

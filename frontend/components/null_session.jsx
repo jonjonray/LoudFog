@@ -45,6 +45,9 @@ class NullSession extends React.Component {
         <div className="bannerhead-content">
           Welcome to the New Era of Music
         </div>
+        <div className="bannerhead-content quote">
+          “We are the music makers, and we are the dreamers of dreams.” ― Arthur O’Shaughnessy
+        </div>
       </div>
 
         </div>

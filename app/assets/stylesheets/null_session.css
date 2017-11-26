@@ -51,13 +51,14 @@
     width:110px;
     display: inline-block;
     position: relative;
-    font-size: 14px;
+    font-size: large;
     font-family: 'Raleway', sans-serif;
     color: white;
     text-align: center;
     line-height: 4px;
     margin: 10px;
     margin-bottom: 30px;
+    letter-spacing: 1px;
   }
 
   .auth-buttons button:hover {
@@ -76,18 +77,19 @@
   }
 
   .logo-div {
-    background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 11px;
+    background: url(https://s3-us-west-1.amazonaws.com/loudfog/cloud-2.png) no-repeat 12px 11px;
     background-size: 21px 50px;
-    height: 22px;
-    width: 50px;
+    height: 37px;
+    width: 97px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
 
+
   }
   .title-div{
-    line-height: 27px;
+
     font-size: xx-large;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -101,6 +103,8 @@
     flex-direction: row;
     position: absolute;
     top: 10%;
+    justify-content: space-between;
+    width: 300px;
   }
 
   .bannerhead-content {
@@ -108,5 +112,10 @@
     color: white;
     font-family: 'Montserrat', sans-serif;
     padding-bottom: 130px;
-    text-shadow: 1px 1px 5px black;
+    text-shadow: 1px 1px 8px grey;
+    letter-spacing: 1px;
+  }
+
+  .quote {
+    font-size: large;
   }
