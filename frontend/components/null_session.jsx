@@ -6,13 +6,29 @@ import SessionFormContainer
 
 class NullSession extends React.Component {
 
+  componentDidMount(){
+    document.getElementById('vid').defaultPlaybackRate = 0.1;
+  }
+
   render() {
     return (
 
     <div className="null-session">
-
+      <video playsInline autoPlay muted loop
+        poster="app/assets/images/drummer.png"
+        id="vid">
+        <source src="https://s3-us-west-1.amazonaws.com/loudfog/drummer.webm"
+          type="video/webm">
+        </source>
+        <source src="https://s3-us-west-1.amazonaws.com/loudfog/shutterstock_v4535888.mov"
+          type="video/mov">
+        </source>
+      </video>
       <div className="null-session-body">
-      <div className="null-session-banner">
+        <div className="left-logo-head">
+          <div className="logo-div"> </div>
+          <div className="title-div"> LOUDFOG </div>
+        </div>
 
         <div className="auth-buttons">
           <Link to={"/login"}>
@@ -25,25 +41,13 @@ class NullSession extends React.Component {
         </div>
 
 
-        <div className="left-logo-head">
-          <div className="logo-div"> </div>
-          <div className="title-div"> LOUDFOG </div>
-        </div>
 
         <div className="bannerhead-content">
           Welcome to the New Era of Music
         </div>
       </div>
 
-      <div className="null-session-content">
-          <div>
-
-          </div>
-
-          </div>
-
         </div>
-      </div>
 
   );
   }

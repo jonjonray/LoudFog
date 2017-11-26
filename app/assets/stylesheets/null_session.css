@@ -1,47 +1,63 @@
 
-  .null-session-banner {
-    background: url("https://s3-us-west-1.amazonaws.com/loudfog/loudfogbanner.jpg");
-    height: 500px;
-    position: relative;
-    border: 2px solid orange;
-    padding: 10px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    font-family: 'Raleway', sans-serif;
-    width: 100%;
 
-  }
 
-  .null-session{
-    position: relative;
+
+  .null-session-body{
+    position: fixed;
+    display: flex;
     align-items: center;
     align-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+
+  video#vid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
     height: auto;
+    z-index: -2;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(app/assets/images/drummer.png) no-repeat;
+    background-size: cover;
   }
 
   .auth-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 150px;
-    height: 40px;
-    position: absolute;
-    right: 20px;
+    width: 400px;
+    height: 60px;
+
   }
 
   .auth-buttons button {
-    height: 30px;
+    height: 45px;
+    width:110px;
     display: inline-block;
     position: relative;
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
     color: white;
-    padding: 10px;
     text-align: center;
     line-height: 4px;
+    margin: 10px;
+    margin-bottom: 30px;
   }
 
   .auth-buttons button:hover {
@@ -55,7 +71,8 @@
   }
 
   .signup {
-    background-color: #f48342;
+    background: linear-gradient(#f48342,#c4652f);
+    border: none;
   }
 
   .logo-div {
@@ -67,44 +84,29 @@
     background-size: cover;
     background-position: center;
 
+
   }
   .title-div{
     line-height: 27px;
-    margin-left: 7px;
-    color: white;
+    font-size: xx-large;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     letter-spacing: 2px;
+    color: white;
+
   }
 
   .left-logo-head {
     display: flex;
     flex-direction: row;
-
+    position: absolute;
+    top: 10%;
   }
 
   .bannerhead-content {
-    position: absolute;
-    left: 33%;
-    bottom: 15%;
     font-size: xx-large;
     color: white;
     font-family: 'Montserrat', sans-serif;
-
-  }
-
-  .null-session-content {
-    height: 500px;
-    background-color: white;
-    position: absolute;
-    width:100%;
-    padding: 11px;
-  }
-
-
-  .null-session-body {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    height: 100%;
+    padding-bottom: 130px;
+    text-shadow: 1px 1px 5px black;
   }
