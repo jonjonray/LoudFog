@@ -1,0 +1,33 @@
+.song-index-item {
+  display: flex;
+  width: 600px;
+  height: 150px;
+  float: left;
+  background-color: grey;
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.song-list {
+  width: 80%;
+  display: flex;
+  list-style: none;
+  padding-left: 0px;
+  flex-direction: column;
+
+}
+
+.song-image {
+  width: 150px;
+  height: 150px;
+}
+
+.play-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/play-button.png);
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

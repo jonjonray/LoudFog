@@ -20,7 +20,8 @@ class SongIndex extends React.Component {
       <div className="song-index">
         <NavBarContainer />
         <div className="song-index-body">
-          <ul>
+          <div className="feed">Feed</div>
+          <ul className="song-list">
           {
             this.props.songs.map((song) => (
               <SongIndexItem song={song}

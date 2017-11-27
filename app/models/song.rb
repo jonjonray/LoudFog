@@ -5,8 +5,12 @@ class Song < ApplicationRecord
   validates :audio, attachment_presence: true
   validates_attachment_content_type :audio, content_type: /\Aaudio\/.*\z/
 
-  has_attached_file :image
+  has_attached_file :image, styles: {
+    thumb: '100x100',
+    medium: '300x300'
+  }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
 
   belongs_to :user
 end

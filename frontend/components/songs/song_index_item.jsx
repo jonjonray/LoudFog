@@ -8,11 +8,22 @@ class SongIndexItem extends React.Component {
 
 
   render(){
+    let _defaultURL = "http://wikiclipart.com/wp-content/uploads/2017/05/Music-notes-black-and-white-small-music-notes-clipart-2.jpeg";
+    let imageSource = this.props.song.image_url ?
+      this.props.song.image_url : _defaultURL;
     return (
-      <li>
-        {this.props.song.title}
-        <ReactAudioPlayer src={this.props.song.audio_url}
-          controls />
+      <li className="song-index-item">
+        <img src={imageSource}
+           className="song-image" />
+         <div className="play-button">
+
+        </div>
+
+        <div className="song-title">
+          {this.props.song.title}
+        </div>
+
+
       </li>
     );
   }
