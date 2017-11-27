@@ -23,7 +23,7 @@ class Api::SongsController < ApplicationController
   end
 
   def update
-    @song = Song.find(params[:song_id])
+    @song = Song.find(params[:id])
     if @song.update(song_params)
       render :show
     else

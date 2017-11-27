@@ -4,21 +4,31 @@ import merge from 'lodash/merge';
 class SongUpdateForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = { title: this.props.title, id: this.props.id};
+    this.state = { title: this.props.song.title, id: this.props.song.id};
     this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
-    document.addEventListener("onclick", this.handleSubmit);
+    console.log("mounted");
+
+    document.addEventListener("keydown", this.handleSubmit);
   }
 
   update(e){
+    e.preventDefault();
     this.setState({ title: e.target.value });
   }
 
   handleSubmit(e){
-    document.removeEventListener("onclick", this.handleSubmit);
-    this.props.updateSong(this.state);
+    switch (e.keyCode) {
+      case 13:
+      document.removeEventListener("keydown", this.handleSubmit);
+      this.props.updateSong(this.state);
+      break;
+      default:
+        return null;
+    }
   }
 
   render(){

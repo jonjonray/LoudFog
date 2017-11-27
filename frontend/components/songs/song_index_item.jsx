@@ -5,6 +5,7 @@ class SongIndexItem extends React.Component {
   constructor(props){
     super(props);
     this.state = { editMode: false };
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleEdit(e){
@@ -49,6 +50,8 @@ class SongIndexItem extends React.Component {
           <div className="song-creator">
             {this.props.user.username}
           </div>
+
+          { title }
 
 
           <div className="like-comment-buttons">
