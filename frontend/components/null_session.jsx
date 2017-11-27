@@ -4,6 +4,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer
   from './session_form/session_form_container';
 
+
 class NullSession extends React.Component {
 
   componentDidMount(){
@@ -14,6 +15,9 @@ class NullSession extends React.Component {
     return (
 
     <div className="null-session">
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+
       <video playsInline autoPlay muted loop
         poster="app/assets/images/drummer.png"
         id="vid">

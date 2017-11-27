@@ -1,37 +1,30 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import SongUpdateFormContainer from './song_update_form_container';
+
 class SongIndexItem extends React.Component {
   constructor(props){
     super(props);
     this.state = { editMode: false };
     this.handleEdit = this.handleEdit.bind(this);
+
   }
+
+
 
   handleEdit(e){
-    this.setState( { editMode: true } );
+    console.log(this.state.editMode);
+    this.setState( { editMode: true }, () => console.log(this.state.editMode));
   }
 
-  componentDidMount() {
-    this.setState( { editMode: false });
+  componentWillReceiveProps(newProps){
+    this.setState( { editMode: false});
   }
+
+
   render(){
-
-    let _defaultURL =
-    "http://wikiclipart.com/wp-content/uploads/2017/05/Music-notes-black-and-white-small-music-notes-clipart-2.jpeg";
-    let imageSource = this.props.song.image_url ?
-      this.props.song.image_url : _defaultURL;
+    let imageSource = this.props.song.image_url;
     let that = this;
-    let title;
-    if (this.state.editMode) {
-      title = <SongUpdateFormContainer song={this.props.song} />;
-    } else {
-      title = (
-        <div className="song-title">
-        {this.props.song.title}
-      </div>
-    );
-    }
 
 
       if (!this.props.user || !this.props.song) {
@@ -51,7 +44,8 @@ class SongIndexItem extends React.Component {
             {this.props.user.username}
           </div>
 
-          { title }
+          <SongUpdateFormContainer editMode={this.state.editMode}
+            song={this.props.song} />
 
 
           <div className="like-comment-buttons">
