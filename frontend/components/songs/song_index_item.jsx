@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-
+import SongUpdateFormContainer from './song_update_form_container';
 class SongIndexItem extends React.Component {
   constructor(props){
     super(props);
+    this.state = { editMode: false };
   }
 
+  handleEdit(e){
+    this.setState( { editMode: true } );
+  }
 
+  componentDidMount() {
+    this.setState( { editMode: false });
+  }
   render(){
 
     let _defaultURL =
@@ -14,14 +21,27 @@ class SongIndexItem extends React.Component {
     let imageSource = this.props.song.image_url ?
       this.props.song.image_url : _defaultURL;
     let that = this;
+    let title;
+    if (this.state.editMode) {
+      title = <SongUpdateFormContainer song={this.props.song} />;
+    } else {
+      title = (
+        <div className="song-title">
+        {this.props.song.title}
+      </div>
+    );
+    }
+
 
       if (!this.props.user || !this.props.song) {
         return (<div> LOADING </div>);
       } else {
     return (
       <li className="song-index-item">
+        <div className="song-image-parent">
         <img src={imageSource}
            className="song-image" />
+         </div>
          <div className="play-button">
 
         </div>
@@ -29,9 +49,7 @@ class SongIndexItem extends React.Component {
           <div className="song-creator">
             {this.props.user.username}
           </div>
-          <div className="song-title">
-            {this.props.song.title}
-          </div>
+
 
           <div className="like-comment-buttons">
             <div className="like">
@@ -59,7 +77,8 @@ class SongIndexItem extends React.Component {
 
               {
                 this.props.user.id === this.props.currentUser.id ?
-                <div className="edit">
+                <div className="edit"
+                  onClick={this.handleEdit}>
                   <div className="edit-icon">
                   </div>
                 </div>

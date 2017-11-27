@@ -1,8 +1,7 @@
 class Song < ApplicationRecord
   validates :title, :user_id, presence: true
-
+  validates :title, length: { minimum: 5 }
   has_attached_file :audio
-  validates :audio, attachment_presence: true
   validates_attachment_content_type :audio, content_type: /\Aaudio\/.*\z/
 
   has_attached_file :image, styles: {

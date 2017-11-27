@@ -7,6 +7,7 @@
   list-style: none;
   margin-top: 20px;
   margin-bottom: 20px;
+  background: linear-gradient(#ffffff,#f7f7f7)
 
 }
 
@@ -16,13 +17,13 @@
   list-style: none;
   padding-left: 0px;
   flex-direction: column;
-
 }
 
 .song-image {
   width: 100px;
   height: 100px;
   border: 1px solid black;
+
 }
 
 .play-button {
@@ -144,4 +145,12 @@
   width: 52px;
   justify-content: space-between;
 
+}
+.song-image-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
 }
