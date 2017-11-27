@@ -6,14 +6,16 @@ import { fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   let songs = Object.keys(state.songs).map((key) => state.songs[key]);
-  return { songs };
+  let users = state.users;
+  let currentUser = state.session.currentUser;
+  return { songs, users, currentUser};
 };
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchSongs: () => dispatch(fetchSongs()),
-
+    fetchUsers: () => dispatch(fetchUsers())
   };
 };
 

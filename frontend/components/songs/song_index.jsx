@@ -12,26 +12,33 @@ class SongIndex extends React.Component {
   }
 
   componentDidMount(){
+    this.props.fetchUsers();
     this.props.fetchSongs();
   }
 
   render() {
-    return (
-      <div className="song-index">
-        <NavBarContainer />
-        <div className="song-index-body">
-          <div className="feed">Feed</div>
-          <ul className="song-list">
-          {
-            this.props.songs.map((song) => (
-              <SongIndexItem song={song}
-                key={song.title} />
-            ))
-          }
-          </ul>
+    if (!this.props.songs || !this.props.users) {
+      return <div>"LOADING"</div>;
+    } else {
+      return (
+        <div className="song-index">
+          <NavBarContainer />
+          <div className="song-index-body">
+            <div className="feed">Feed</div>
+            <ul className="song-list">
+              {
+                this.props.songs.map((song) => (
+                  <SongIndexItem song={song}
+                    user={this.props.users[song.user_id]}
+                    key={song.title}
+                    currentUser={this.props.currentUser} />
+                ))
+              }
+            </ul>
+          </div>
         </div>
-      </div>
-  );
+        );
+      }
   }
 }
 
