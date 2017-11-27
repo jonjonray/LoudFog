@@ -59,7 +59,10 @@
 }
 
 .like,
-.comment {
+.comment,
+.delete,
+.edit,
+.empty {
   border: 1px solid #f48342;
   color: white;
   border-radius: 4px;
@@ -69,7 +72,9 @@
 }
 
 .like:hover,
-.comment:hover {
+.comment:hover,
+.delete:hover,
+.edit:hover {
   cursor: pointer;
   background-color: #d8d8d8;
 
@@ -98,11 +103,45 @@
   top: 3px;
 }
 
+.delete-icon {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/delete-icon-orange.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  left: 4px;
+  top: 2px;
+}
+
+.edit-icon {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/edit-icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  left: 3px;
+  top: 2px;
+}
+
 .like-comment-buttons {
   display: flex;
   flex-direction: row;
   position: absolute;
   bottom: 10px;
   justify-content: space-between;
-  width: 60px;
+  width: 120px;
+}
+
+.empty {
+  border: none;
+}
+
+.current-user-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 52px;
+  justify-content: space-between;
+
 }

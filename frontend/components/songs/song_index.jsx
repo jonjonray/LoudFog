@@ -31,7 +31,8 @@ class SongIndex extends React.Component {
                   <SongIndexItem song={song}
                     user={this.props.users[song.user_id]}
                     key={song.title}
-                    currentUser={this.props.currentUser} />
+                    currentUser={this.props.currentUser}
+                    deleteSong={this.props.deleteSong} />
                 ))
               }
             </ul>

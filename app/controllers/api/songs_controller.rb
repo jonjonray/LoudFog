@@ -32,10 +32,10 @@ class Api::SongsController < ApplicationController
   end
 
   def destroy
-    @song = Song.find(params[:song_id])
+    @song = Song.find(params[:id])
     if @song && @song.user_id == current_user.id
       @song.destroy
-      render :index
+      render :show
     else
       render json: ["Unable to delete song"], status: 422
     end

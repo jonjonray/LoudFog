@@ -10,7 +10,7 @@ class SongForm extends React.Component {
       audio: null,
       image: null,
       audioFileName: "Choose a song",
-      imageFileName: "(Optional) Choose your artwork"
+      imageFileName: "Choose your artwork"
     };
     this.updateTitle = this.updateTitle.bind(this);
     this.fileName = "Choose a file";

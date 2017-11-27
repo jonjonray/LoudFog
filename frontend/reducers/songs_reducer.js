@@ -17,6 +17,7 @@ const songsReducer = (oldState = {}, action) => {
       newState = merge({}, oldState, {[action.song.id]: action.song});
       return newState;
     case REMOVE_SONG:
+    debugger;
       newState = merge({}, oldState);
       delete newState[action.songId];
       return newState;

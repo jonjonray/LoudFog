@@ -33,5 +33,9 @@ export const updateSong = (songs) => dispatch => (
 );
 
 export const createSong = (songs) => dispatch => (
-  SongUtil.createSong(songs).then(song => dispatch(receiveAllSongs(song)) )
+  SongUtil.createSong(songs).then(song => dispatch(receiveSong(song)) )
+);
+
+export const deleteSong = (songId) => dispatch => (
+  SongUtil.deleteSong(songId).then((song) => dispatch(removeSong(song.id)))
 );

@@ -8,12 +8,12 @@ class SongIndexItem extends React.Component {
 
 
   render(){
+
     let _defaultURL =
     "http://wikiclipart.com/wp-content/uploads/2017/05/Music-notes-black-and-white-small-music-notes-clipart-2.jpeg";
     let imageSource = this.props.song.image_url ?
       this.props.song.image_url : _defaultURL;
-
-    let additionalIcons = this.props.user.id === this.props.currentUser.id;
+    let that = this;
 
       if (!this.props.user || !this.props.song) {
         return (<div> LOADING </div>);
@@ -43,16 +43,32 @@ class SongIndexItem extends React.Component {
               <div className="comment-icon">
 
               </div>
+            </div>
 
               {
-                additionalIcons ? <div className="delete">
+                this.props.user.id === this.props.currentUser.id ?
+                <div className="delete"
+                     onClick={(e) => {
+                       return (that.props.deleteSong(that.props.song.id));
+                     }} >
                   <div className="delete-icon">
                   </div>
-                </div> : null
+                </div>
+                    : <div className="empty"></div>
               }
+
+              {
+                this.props.user.id === this.props.currentUser.id ?
+                <div className="edit">
+                  <div className="edit-icon">
+                  </div>
+                </div>
+                : <div className="empty"></div>
+              }
+
             </div>
           </div>
-      </div>
+
 
       </li>
     );
