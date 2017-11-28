@@ -7,8 +7,8 @@ class SongForm extends React.Component {
     this.state = {
       title: "",
       user_id: this.props.currentUser.id,
-      audio: null,
-      image: null,
+      audio: "",
+      image: "",
       audioFileName: "Choose a song",
       imageFileName: "Choose your artwork"
     };
