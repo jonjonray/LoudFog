@@ -26,29 +26,30 @@
 .song-show-header {
   background: linear-gradient(#ffd696, #997b4e);
   height: 222px;
-  width: 98%;
+  width: 95%;
   position: absolute;
   top: 47px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .song-show-header-left {
-  width: 70%;
+  width: 30%;
   height: 100%;
 }
 
 .song-show-header-right {
-  width: 30%;
+  width: 25%;
   height: 100%;
   display: flex;
   align-items: center;
 
 }
 .song-show-header-right img {
-  width: 200px;
-  height: 200px;
-  margin-left: 28px;
+  width: 90%;
+  height: 90%;
+
   border: 1px solid black;
 
 }
