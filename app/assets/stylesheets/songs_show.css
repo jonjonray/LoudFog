@@ -13,7 +13,6 @@
 
 .song-show {
   width:100%;
-  display: flex;
   position: relative;
   align-items: center;
   align-content: center;
@@ -22,4 +21,76 @@
   justify-content: space-around;
   padding-top: 20px;
 
+}
+
+.song-show-header {
+  background: linear-gradient(#ffd696, #997b4e);
+  height: 222px;
+  width: 98%;
+  position: absolute;
+  top: 47px;
+  display: flex;
+  flex-direction: row;
+}
+
+.song-show-header-left {
+  width: 70%;
+  height: 100%;
+}
+
+.song-show-header-right {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+.song-show-header-right img {
+  width: 200px;
+  height: 200px;
+  margin-left: 28px;
+  border: 1px solid black;
+
+}
+
+.song-show-username,
+.song-show-title {
+  background-color: #323233;
+  color: white;
+  letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
+  padding: 2px;
+  margin-left: 10px;
+  display: inline-table;
+
+
+}
+
+.song-show-play-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/play-button.png);
+  height: 45px;
+  width: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+
+}
+
+.song-show-left {
+
+}
+
+.song-show-top-left {
+  display: flex;
+  flex-direction: row;
+  height: 65px;
+  margin-top: 10px;
+
+
+}
+
+.song-show-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

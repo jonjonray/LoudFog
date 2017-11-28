@@ -6,9 +6,9 @@ import { fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let song = state.songs[ownProps.match.params.songId];
-  let user = state.user;
+  let users = state.users;
   let currentUser = state.session.currentUser;
-  return { song, user, currentUser};
+  return { song, users, currentUser};
 };
 
 
