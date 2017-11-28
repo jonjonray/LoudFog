@@ -9,7 +9,7 @@ class Player extends React.Component {
   render(){
     return (
       <div className="audio-player">
-
+        <div className="audio-player-contents">
         <div className="player-play-button">
 
         </div>
@@ -21,6 +21,7 @@ class Player extends React.Component {
 
         <div className="player-volume-button">
 
+        </div>
         </div>
       </div>
     );

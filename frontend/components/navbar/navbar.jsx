@@ -16,7 +16,6 @@ class NavBar extends React.Component {
   }
 
   render(){
-
     return (
       <div className="navbar">
 
@@ -25,7 +24,7 @@ class NavBar extends React.Component {
         </div>
         <div className="right">
 
-          <Link to={this.props.match.path + "/upload"}>
+          <Link to={this.props.location.pathname + "/upload"}>
           <div className="upload-button"></div>
           </Link>
 

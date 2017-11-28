@@ -17,6 +17,7 @@ const Main = () => (
   <div className="main">
     <ProtectedRoute path="/songs" component={NavBarContainer} />
     <ProtectedRoute path="/songs/upload" component={SongFormContainer}/>
+    <ProtectedRoute path="/songs/:songId/upload" component={SongFormContainer}/>
     <ProtectedRoute path="/songs" component={MainLeft} />
     <ProtectedRoute path="/songs" component={MainRight} />
     <ProtectedRoute path="/" component={PlayerContainer} />

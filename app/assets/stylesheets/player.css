@@ -9,4 +9,43 @@
   padding: 0px;
   left: 0px;
   right: 0px;
+
+}
+
+.player-play-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/audio_player_play_button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 15px;
+  width: 15px;
+  left: 320px;
+  top: 15px;
+}
+
+
+.player-progress-bar {
+  width: 200px;
+
+
+}
+
+
+.player-volume-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/volume_button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 15px;
+  width: 15px;
+}
+
+
+.audio-player-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 39%;
+  top: 16px;
 }
