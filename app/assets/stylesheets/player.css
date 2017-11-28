@@ -1,0 +1,12 @@
+.audio-player {
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  border-top: 1px solid black;
+  background: #f7f7f7;
+  margin:0px;
+  padding: 0px;
+  left: 0px;
+  right: 0px;
+}

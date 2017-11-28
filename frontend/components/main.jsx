@@ -11,6 +11,7 @@ import {
 import NavBarContainer from './navbar/navbar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SongFormContainer from './songs/song_form_container';
+import PlayerContainer from './player/player_container';
 
 const Main = () => (
   <div className="main">
@@ -18,6 +19,7 @@ const Main = () => (
     <ProtectedRoute path="/songs/upload" component={SongFormContainer}/>
     <ProtectedRoute path="/songs" component={MainLeft} />
     <ProtectedRoute path="/songs" component={MainRight} />
+    <ProtectedRoute path="/" component={PlayerContainer} />
   </div>
 );
 

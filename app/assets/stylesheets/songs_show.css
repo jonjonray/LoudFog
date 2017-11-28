@@ -41,7 +41,7 @@
 }
 
 .song-show-header-right {
-  width: 25%;
+  width: 30%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -64,10 +64,18 @@
   padding: 2px;
   margin-left: 10px;
   display: inline-table;
-
+  font-weight: bold;
 
 }
 
+.song-show-username {
+  color: #b7b7b7;
+  font-size: medium;
+}
+
+.song-show-title {
+  font-size: large;
+}
 .song-show-play-button {
   background: url(https://s3-us-west-1.amazonaws.com/loudfog/play-button.png);
   height: 45px;
@@ -78,8 +86,8 @@
 
 }
 
-.song-show-left {
-
+.song-show-header-left {
+  flex-grow: 2;
 }
 
 .song-show-top-left {
