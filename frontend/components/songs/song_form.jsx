@@ -18,6 +18,7 @@ class SongForm extends React.Component {
     this.escapeHandle = this.escapeHandle.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   updateTitle(e){
@@ -54,10 +55,8 @@ class SongForm extends React.Component {
     requestData.append("song[user_id]", this.state.user_id);
     requestData.append("song[audio]", this.state.audio);
     requestData.append("song[image]", this.state.image);
-
-
-    this.props.createSong(requestData);
-    this.props.history.goBack();
+    this.props.createSong(requestData).then(
+      () => this.props.history.goBack());
   }
 
   filePlaceholder(e, type){
@@ -87,6 +86,18 @@ class SongForm extends React.Component {
     document.removeEventListener("keydown", this.escapeHandle);
   }
 
+  renderErrors() {
+    return(
+      <ul className="errors song-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render(){
     return (
       <div className="song-modal">
@@ -99,6 +110,7 @@ class SongForm extends React.Component {
           <div className="song-form-header">
             Upload to LoudFog
           </div>
+          { this.renderErrors()}
           <input type="text"
                 ref={(input) => {this.titleInput = input; }}
                 onChange={this.updateTitle}

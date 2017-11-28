@@ -117,3 +117,8 @@ label{
   text-align: center;
   margin-bottom: 23px;
 }
+
+.song-errors {
+  left: 100px;
+  top: 31px;
+}
