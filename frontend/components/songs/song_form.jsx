@@ -29,6 +29,7 @@ class SongForm extends React.Component {
     e.preventDefault();
     const type = e.target.name;
     this.filePlaceholder(e,type);
+
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     let that = this;
