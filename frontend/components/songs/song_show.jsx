@@ -15,7 +15,6 @@ class SongShow extends React.Component {
   render(){
     return (
       <div className="song-show">
-        <NavBarContainer />
         <div className="song-show-body"> </div>
       </div>
 

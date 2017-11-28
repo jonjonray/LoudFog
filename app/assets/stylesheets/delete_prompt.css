@@ -9,7 +9,7 @@
 }
 
 .delete-modal-options {
-  position: absolute;
+  position: fixed;
   top: 100px;
   left: 50%;
   margin-left: -220px;

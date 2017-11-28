@@ -22,7 +22,6 @@ class SongIndex extends React.Component {
     } else {
       return (
         <div className="song-index">
-          <NavBarContainer />
           <div className="song-index-body">
             <div className="feed">Feed</div>
             <ul className="song-list">
