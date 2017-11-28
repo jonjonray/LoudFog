@@ -80,7 +80,7 @@ class SongUpdateForm extends React.Component {
         <div className="song-title">
           {this.props.song.title}
         </div>
-      </Link>
+        </Link>
     );
   } else {
     return (<input className="edit-form"

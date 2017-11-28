@@ -1,24 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SongUpdateFormContainer from './song_update_form_container';
-
+import SongDeletePrompt from './song_delete_prompt';
 class SongIndexItem extends React.Component {
   constructor(props){
     super(props);
-    this.state = { editMode: false };
+    this.state = { editMode: false, deleteMode: false };
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
 
   }
 
 
 
   handleEdit(e){
-    console.log(this.state.editMode);
-    this.setState( { editMode: true }, () => console.log(this.state.editMode));
+    this.setState( { deleteMode: false });
+    this.setState( { editMode: true });
+  }
+
+  handleDelete(e){
+    this.setState( { deleteMode: true});
   }
 
   componentWillReceiveProps(newProps){
     this.setState( { editMode: false});
+    this.setState( { deleteMode: false });
   }
 
 
@@ -26,12 +32,17 @@ class SongIndexItem extends React.Component {
     let imageSource = this.props.song.image_url;
     let that = this;
 
-
       if (!this.props.user || !this.props.song) {
         return (<div> LOADING </div>);
       } else {
     return (
       <li className="song-index-item">
+
+
+      <SongDeletePrompt song={this.props.song}
+        deleteSong={this.props.deleteSong}
+        deleteMode={this.state.deleteMode} />
+
         <div className="song-image-parent">
         <img src={imageSource}
            className="song-image" />
@@ -63,9 +74,7 @@ class SongIndexItem extends React.Component {
               {
                 this.props.user.id === this.props.currentUser.id ?
                 <div className="delete"
-                     onClick={(e) => {
-                       return (that.props.deleteSong(that.props.song.id));
-                     }} >
+                     onClick={this.handleDelete}>
                   <div className="delete-icon">
                   </div>
                 </div>

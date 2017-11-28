@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import SongFormContainer from '../songs/song_form_container';
 class NavBar extends React.Component {
   constructor(props){
     super(props);
@@ -15,8 +16,10 @@ class NavBar extends React.Component {
   }
 
   render(){
+
     return (
       <div className="navbar">
+
         <div className="left">
           <div className="nav-logo"></div>
         </div>

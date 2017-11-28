@@ -1,0 +1,62 @@
+.delete-modal-shade {
+  position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+}
+
+.delete-modal-options {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -220px;
+  width: 360px;
+  height: 110px;
+  padding: 20px;
+  background: #fff;
+  z-index: 12;
+  border-radius: 5px;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.delete-modal-title {
+  font-size: medium;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+}
+
+.delete-song-name {
+  color: orange;
+}
+
+.button-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-options button {
+  height: 30px;
+  display: inline;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  line-height: 4px;;
+  background-color: #f48342;
+  border: #f48342 1px solid;
+}
+
+.button-options button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

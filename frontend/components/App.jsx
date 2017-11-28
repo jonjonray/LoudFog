@@ -18,12 +18,10 @@ import SongShowContainer from './songs/song_show_container';
 
 const App = () => (
   <div>
-    <Switch>
       <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
       <ProtectedRoute path="/songs/upload" component={SongFormContainer} />
       <ProtectedRoute path="/songs" component={SongIndexContainer} />
       <AuthRoute path="/" component={NullSession} />
-    </Switch>
   </div>
 );
 
