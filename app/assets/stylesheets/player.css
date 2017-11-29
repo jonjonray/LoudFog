@@ -12,6 +12,11 @@
 
 }
 
+.audio-player-contents {
+  width: 400px;
+  height: 100%;
+}
+
 .player-play-button {
   background: url(https://s3-us-west-1.amazonaws.com/loudfog/audio_player_play_button.png);
   background-position: center;
@@ -19,10 +24,33 @@
   background-size: cover;
   height: 15px;
   width: 15px;
-  left: 320px;
-  top: 15px;
+  top: 4px;
+  position: absolute;
 }
 
+.player-pause-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/black-pause-512.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20px;
+  width: 15px;
+  top: 2px;
+  position: absolute;
+}
+
+
+.player-stop-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/Stop-595b4bae5ba036ed117e6ec4.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 13px;
+  width: 13px;
+  top: 5.2px;
+  left: 42px;
+  position: absolute;
+}
 
 .player-progress-bar {
   width: 200px;
@@ -46,6 +74,6 @@
   flex-direction: row;
   align-items: center;
   position: absolute;
-  left: 39%;
+  left: 30%;
   top: 16px;
 }

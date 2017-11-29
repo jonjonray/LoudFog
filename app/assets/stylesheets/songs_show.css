@@ -25,7 +25,7 @@
 
 .song-show-header-parent {
   background: linear-gradient(#ffd696, #f48342);
-  width: 99%;
+  width: 96%;
   height: 222px;
   position: absolute;
   top: 47px;
@@ -91,8 +91,9 @@
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: 20px;
-
 }
+
+
 
 .song-show-header-left {
   flex-grow: 2;

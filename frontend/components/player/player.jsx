@@ -18,30 +18,57 @@ class Player extends React.Component {
     super(props);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
+    this.handleStop = this.handleStop.bind(this);
+    this.state = { playing: false };
 
   }
 
   handlePlay(e){
     let player = this.rap.audioEl;
+    this.setState({ playing: true });
     player.play();
-    // let volume = player.volume / 1;
-    // let volumeMeter =
+
   }
 
   handlePause(e){
     let player = this.rap.audioEl;
+    this.setState({ playing: false });
+    player.pause();
+  }
+
+  handleStop(e){
+    let player = this.rap.audioEl;
+    this.setState({ playing: false });
+    player.currentTime = 0;
+    player.pause();
   }
 
   render(){
+    let playPause;
+    if (!this.state.playing) {
+      playPause = (<div className="player-play-button"
+          onClick={this.handlePlay}>
+      </div>);
+    } else {
+      playPause = (<div className="player-pause-button"
+          onClick={this.handlePause}>
+      </div>);
+    }
+
+
     return (
       <div className="audio-player">
         <div className="audio-player-contents">
-          <div className="player-play-button"
-              onClick={this.handlePlay}>
+
+          { playPause }
+          <div className="player-stop-button"
+                onClick={this.handleStop}>
+
           </div>
+
           <ReactAudioPlayer
             ref={(element) => { this.rap = element; }}
-            src="https://s3-us-west-1.amazonaws.com/loudfog/songs/audios/000/000/004/original/4.mp3"
+            src="https://s3-us-west-1.amazonaws.com/loudfog/songs/audios/000/000/043/original/12.mp3"
           />
         </div>
       </div>
