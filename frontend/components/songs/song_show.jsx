@@ -20,7 +20,7 @@ class SongShow extends React.Component {
     return (
       <div className="song-show">
         <div className="song-show-body">
-
+        <div className="song-show-header-parent">
         <div className="song-show-header">
           <div className="song-show-header-left">
             <div className="song-show-top-left">
@@ -46,6 +46,7 @@ class SongShow extends React.Component {
           </div>
 
 
+        </div>
         </div>
         </div>
       </div>

@@ -31,12 +31,12 @@ class SongIndexItem extends React.Component {
   render(){
     let imageSource = this.props.song.image_url;
     let that = this;
-
       if (!this.props.user || !this.props.song) {
         return (<div> LOADING </div>);
       } else {
     return (
-      <li className="song-index-item">
+      <li className={"song-index-item" + (this.props.selectedId === `${this.props.song.id}` ?
+                    " selected" : "")}>
 
 
       <SongDeletePrompt song={this.props.song}
@@ -93,7 +93,6 @@ class SongIndexItem extends React.Component {
 
             </div>
           </div>
-
 
       </li>
     );

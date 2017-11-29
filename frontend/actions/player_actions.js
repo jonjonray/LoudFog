@@ -1,6 +1,6 @@
 export const PLAY_SONG = "PLAY_SONG";
 export const PAUSE_SONG = "PAUSE_SONG";
-export const PLAY_NEW_SONG = "PLAY_NEW_SONG";
+export const PLAY_PAUSE = "PLAY_PAUSE";
 
 
 export const playSong = () => ({
@@ -11,7 +11,6 @@ export const pauseSong = () => ({
   type: PAUSE_SONG
 });
 
-export const playNewSong = (song) => ({
-  type: PLAY_NEW_SONG,
-  song
+export const playPause = () => ({
+  type: PLAY_PAUSE,
 });

@@ -23,16 +23,24 @@
 
 }
 
-.song-show-header {
-  background: linear-gradient(#ffd696, #997b4e);
+.song-show-header-parent {
+  background: linear-gradient(#ffd696, #f48342);
+  width: 99%;
   height: 222px;
-  width: 95%;
   position: absolute;
   top: 47px;
+}
+.song-show-header {
+  height: 222px;
+  width: 95%;
+  /*position: absolute;
+  top: 47px;*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-radius: 2px;
+
+
 }
 
 .song-show-header-left {

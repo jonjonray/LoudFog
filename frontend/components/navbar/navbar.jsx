@@ -25,7 +25,9 @@ class NavBar extends React.Component {
         <div className="right">
 
           <Link to={this.props.location.pathname + "/upload"}>
-          <div className="upload-button"></div>
+          <div className="upload-button">
+            Upload
+          </div>
           </Link>
 
           <div className="username">
@@ -35,6 +37,7 @@ class NavBar extends React.Component {
           <div
             className="signout-button"
             onClick={this.handleSignOut}>
+            Sign Out
           </div>
         </div>
       </div>

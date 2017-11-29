@@ -4,4 +4,11 @@ import merge from 'lodash/merge';
 
 const playerReducer = (state = {}, action) => {
     Object.freeze(state);
-}
+    switch (action.type) {
+      case PLAY_SONG:
+        
+        break;
+      default:
+
+    }
+};

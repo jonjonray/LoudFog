@@ -9,10 +9,11 @@
   margin-bottom: 20px;
   border-bottom: #f7f7f7;
 
+
 }
 
 .song-index-item:hover {
-  background: linear-gradient(#ffffff,#f7f7f7);
+  background: #f7f7f7;
 }
 
 .song-list {
@@ -160,4 +161,12 @@
   margin-bottom: 10px;
   width: 100px;
   height: 100px;
+}
+
+.edit-form-parent {
+  color: red;
+}
+
+.selected {
+  background: #f7f7f7;
 }

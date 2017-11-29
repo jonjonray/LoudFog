@@ -31,7 +31,8 @@ class SongIndex extends React.Component {
                     user={this.props.users[song.user_id]}
                     key={song.title}
                     currentUser={this.props.currentUser}
-                    deleteSong={this.props.deleteSong} />
+                    deleteSong={this.props.deleteSong}
+                    selectedId={this.props.location.pathname[this.props.location.pathname.length - 1]} />
                 ))
               }
             </ul>

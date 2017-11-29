@@ -14,6 +14,7 @@ import PlaceholderCloud from './placeholder_cloud';
 const MainRight = () => (
   <div className="main-right">
     <Switch>
+    <Route exact path="/songs/upload" component={PlaceholderCloud} />
     <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
     <ProtectedRoute path="/songs" component={PlaceholderCloud} />
     </Switch>

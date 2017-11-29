@@ -7,7 +7,8 @@ class SongUpdateForm extends React.Component {
     super(props);
     this.state = { title: this.props.song.title,
       id: this.props.song.id,
-      editMode: this.props.editMode};
+      editMode: this.props.editMode
+    };
     this.update = this.update.bind(this);
     this.handleEnterSubmit = this.handleEnterSubmit.bind(this);
 
@@ -24,17 +25,19 @@ class SongUpdateForm extends React.Component {
   }
 
   handleEnterSubmit(e){
+    let songIndexEl = document.getElementsByClassName("song-index")[0];
+    if (this.state.title.length >= 5) {
     switch (e.keyCode) {
       case 13:
       document.removeEventListener("keydown", this.handleEventSubmit);
-      let songIndexEl = document.getElementsByClassName("song-index")[0];
       songIndexEl.removeEventListener("click", this.handleClickSubmit);
-      this.setState( { editMode: false} );
+      this.setState( { editMode: false, errorDisplay: false} );
       let song = { title: this.state.title, id: this.state.id};
       this.props.updateSong(song);
       break;
       default:
         return null;
+      }
     }
   }
 
@@ -56,24 +59,17 @@ class SongUpdateForm extends React.Component {
   }
 
   handleClickSubmit(e){
-    console.log("clicked");
-    document.removeEventListener("keydown", this.handleEventSubmit);
     let songIndexEl = document.getElementsByClassName("song-index")[0];
-    let song = { title: this.state.title, id: this.state.id};
-    songIndexEl.removeEventListener("click", this.handleClickSubmit);
-    this.setState( { editMode: false} );
-    this.props.updateSong(song);
+    if (this.state.title.length >= 5) {
+      document.removeEventListener("keydown", this.handleEventSubmit);
+      let song = { title: this.state.title, id: this.state.id};
+      songIndexEl.removeEventListener("click", this.handleClickSubmit);
+      this.setState( { editMode: false} );
+      this.props.updateSong(song);
+    }
   }
 
   render(){
-
-    if (this.state.editMode) {
-      document.addEventListener("keydown", this.handleEnterSubmit);
-      let songIndexEl = document.getElementsByClassName("song-index")[0];
-      songIndexEl.addEventListener("click", this.handleClickSubmit);
-
-    }
-
     if (!this.state.editMode) {
       return (
         <Link to={`/songs/${this.props.song.id}`}>
@@ -83,10 +79,19 @@ class SongUpdateForm extends React.Component {
         </Link>
     );
   } else {
-    return (<input className="edit-form"
-        ref={(input) => {this.titleInput = input; }}
-        onChange={this.update}
-        value={this.state.title}></input>
+    document.addEventListener("keydown", this.handleEnterSubmit);
+    let songIndexEl = document.getElementsByClassName("song-index")[0];
+    songIndexEl.addEventListener("click", this.handleClickSubmit);
+    return (
+      <div className="edit-form-parent">
+        <input className="edit-form"
+          ref={(input) => {this.titleInput = input; }}
+          onChange={this.update}
+          value={this.state.title}>
+
+        </input>
+        { this.state.title.length < 5 ? "  Title too short" : null}
+      </div>
     );
   }
   }
