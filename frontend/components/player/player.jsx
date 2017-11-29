@@ -19,7 +19,9 @@ class Player extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
     this.handleStop = this.handleStop.bind(this);
-    this.state = { playing: false };
+    this.handleVolume = this.handleVolume.bind(this);
+    this.handleProgress = this.handleProgress.bind(this);
+    this.state = { playing: false, volume: 1, currentTime: 0 };
 
   }
 
@@ -38,10 +40,29 @@ class Player extends React.Component {
 
   handleStop(e){
     let player = this.rap.audioEl;
-    this.setState({ playing: false });
+    this.setState({ playing: false, currentTime: 0 });
     player.currentTime = 0;
     player.pause();
   }
+
+  handleVolume(e){
+    let player = this.rap.audioEl;
+    player.volume = e.target.value;
+    this.setState( { volume: e.target.volume } );
+
+  }
+
+  handleProgress(e){
+    let player = this.rap.audioEl;
+    let percentage = player.currentTime / player.duration;
+    this.setState({ currentTime: percentage });
+
+  }
+
+  timeExpression(seconds){
+
+  }
+
 
   render(){
     let playPause;
@@ -65,10 +86,37 @@ class Player extends React.Component {
                 onClick={this.handleStop}>
 
           </div>
+          <div className="player-progress-wrapper">
 
+            <div className="progess-slider-parent">
+              <input id="progress-slider"
+                type="range"
+                min="0"
+                max="1"
+                value={this.state.currentTime}
+                onChange={this.handleProgressChange}
+                step="0.001"
+                 />
+            </div>
+
+        </div>
+          <div className="player-volume-button-wrapper">
+          <div className="player-volume-button">
+            <div className="volume-slider-parent">
+              <input id="volume-slider"
+                type="range"
+                min="0"
+                max="1"
+                onChange={this.handleVolume}
+                step="0.1" />
+            </div>
+          </div>
+        </div>
           <ReactAudioPlayer
             ref={(element) => { this.rap = element; }}
             src="https://s3-us-west-1.amazonaws.com/loudfog/songs/audios/000/000/043/original/12.mp3"
+            listenInterval={1000}
+            onListen={this.handleProgress}
           />
         </div>
       </div>

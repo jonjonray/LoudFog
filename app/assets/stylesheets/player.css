@@ -33,9 +33,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 20px;
+  height: 21px;
   width: 15px;
-  top: 2px;
+  top: 1px;
   position: absolute;
 }
 
@@ -58,6 +58,14 @@
 
 }
 
+.audio-player-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 30%;
+  top: 16px;
+}
 
 .player-volume-button {
   background: url(https://s3-us-west-1.amazonaws.com/loudfog/volume_button.png);
@@ -66,14 +74,57 @@
   background-size: cover;
   height: 15px;
   width: 15px;
+  position: absolute;
+  bottom: 32px;
+  left: 20px;
 }
 
 
-.audio-player-contents {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+
+.player-volume-button-wrapper:hover .volume-slider-parent,
+.volume-slider-parent:hover {
+  display: block;
+}
+
+#volume-slider{
+  -webkit-appearance: slider-vertical;
+  width: 34px;
+
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+   appearance: none;
+  background:#f48342;
+
+}
+
+#volume-slider::::-moz-range-thumb {
+  background:#f48342;
+
+}
+
+.volume-slider-parent {
   position: absolute;
-  left: 30%;
-  top: 16px;
+  display: none;
+  top: -160px;
+  left: -20px;
+  background: #f7f7f7;
+  width: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.player-volume-button-wrapper {
+  position: absolute;
+  right: 0px;
+  height: 73px;
+  width: 80px;
+  bottom: 0px;
+
+}
+
+#progress-slider {
+  width: 350px;
 }
