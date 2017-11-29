@@ -3,11 +3,12 @@ import errorsReducer from './errors_reducer';
 import sessionReducer from './session_reducer';
 import songsReducer from './songs_reducer';
 import { usersReducer } from './users_reducer';
-
+import playerReducer from './player_reducer';
 
 export default combineReducers({
   session: sessionReducer,
   errors: errorsReducer,
   songs: songsReducer,
-  users: usersReducer
+  users: usersReducer,
+  player: playerReducer
 });

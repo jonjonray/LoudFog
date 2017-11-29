@@ -88,14 +88,11 @@ class Player extends React.Component {
           </div>
           <div className="player-progress-wrapper">
 
-            <div className="progess-slider-parent">
-              <input id="progress-slider"
-                type="range"
-                min="0"
+            <div className="progress-slider-parent">
+              <progress id="progress-slider"
                 max="1"
                 value={this.state.currentTime}
-                onChange={this.handleProgressChange}
-                step="0.001"
+            
                  />
             </div>
 
@@ -115,7 +112,7 @@ class Player extends React.Component {
           <ReactAudioPlayer
             ref={(element) => { this.rap = element; }}
             src="https://s3-us-west-1.amazonaws.com/loudfog/songs/audios/000/000/043/original/12.mp3"
-            listenInterval={1000}
+            listenInterval={50}
             onListen={this.handleProgress}
           />
         </div>

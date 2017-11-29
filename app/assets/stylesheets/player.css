@@ -13,7 +13,7 @@
 }
 
 .audio-player-contents {
-  width: 400px;
+  width: 667px;
   height: 100%;
 }
 
@@ -63,7 +63,7 @@
   flex-direction: row;
   align-items: center;
   position: absolute;
-  left: 30%;
+  left: 23%;
   top: 16px;
 }
 
@@ -125,6 +125,11 @@
 
 }
 
+
 #progress-slider {
-  width: 350px;
+  width: 519px;
+  position: absolute;
+  left: 74px;
+  top: 2px;
+
 }
