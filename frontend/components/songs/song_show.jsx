@@ -9,8 +9,8 @@ class SongShow extends React.Component {
   }
 
   componentWillMount(){
-    this.props.fetchUsers();
-    this.props.fetchSongs();
+    // this.props.fetchUsers();
+    // this.props.fetchSongs();
   }
 
   render(){

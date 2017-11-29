@@ -26,20 +26,31 @@ class SongUpdateForm extends React.Component {
 
   handleEnterSubmit(e){
     let songIndexEl = document.getElementsByClassName("song-index")[0];
-    if (this.state.title.length >= 5) {
+    let song;
+
     switch (e.keyCode) {
       case 13:
-      document.removeEventListener("keydown", this.handleEventSubmit);
-      songIndexEl.removeEventListener("click", this.handleClickSubmit);
-      this.setState( { editMode: false, errorDisplay: false} );
-      let song = { title: this.state.title, id: this.state.id};
-      this.props.updateSong(song);
+      if (this.state.title.length >= 5) {
+        document.removeEventListener("keydown", this.handleEnterSubmit);
+        songIndexEl.removeEventListener("click", this.handleClickSubmit);
+        this.setState( { editMode: false, errorDisplay: false} );
+        song = { title: this.state.title, id: this.state.id};
+        this.props.updateSong(song);
+
+      }
       break;
+      case 27:
+        document.removeEventListener("keydown", this.handleEnterSubmit);
+        songIndexEl.removeEventListener("click", this.handleClickSubmit);
+        this.setState( { editMode: false, errorDisplay: false } );
+        song = { title: this.props.song.title, id: this.state.id};
+        this.props.updateSong(song);
+        break;
       default:
         return null;
       }
     }
-  }
+
 
   componentWillReceiveProps(newProps){
     if (newProps.editMode !== this.state.editMode) {
@@ -61,7 +72,7 @@ class SongUpdateForm extends React.Component {
   handleClickSubmit(e){
     let songIndexEl = document.getElementsByClassName("song-index")[0];
     if (this.state.title.length >= 5) {
-      document.removeEventListener("keydown", this.handleEventSubmit);
+      document.removeEventListener("keydown", this.handleEnterSubmit);
       let song = { title: this.state.title, id: this.state.id};
       songIndexEl.removeEventListener("click", this.handleClickSubmit);
       this.setState( { editMode: false} );
