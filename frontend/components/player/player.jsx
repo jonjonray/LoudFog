@@ -1,48 +1,37 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-// <div className="player-play-button">
-//
-// </div>
-//
-//
-// <div className="player-progress-bar">
-//
-// </div>
-//
-// <div className="player-volume-button">
-//
-// </div>
+
 
 class Player extends React.Component {
   constructor(props){
     super(props);
+    let song = { title: "", image_url: "", audio_url: "", id: ""};
+    if (this.props.song) {
+      song = this.props.song;
+    }
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
     this.handleStop = this.handleStop.bind(this);
     this.handleVolume = this.handleVolume.bind(this);
     this.handleProgress = this.handleProgress.bind(this);
-    this.state = { playing: false, volume: 1, currentTime: 0 };
+    this.state = { playing: this.props.playing,
+      volume: 1, currentTime: 0, song };
 
   }
 
   handlePlay(e){
-    let player = this.rap.audioEl;
-    this.setState({ playing: true });
-    player.play();
-
+    this.props.playSong();
   }
 
   handlePause(e){
-    let player = this.rap.audioEl;
-    this.setState({ playing: false });
-    player.pause();
+    this.props.pauseSong();
   }
 
   handleStop(e){
     let player = this.rap.audioEl;
-    this.setState({ playing: false, currentTime: 0 });
+    this.setState({ currentTime: 0 });
+    this.props.pauseSong();
     player.currentTime = 0;
-    player.pause();
   }
 
   handleVolume(e){
@@ -59,8 +48,21 @@ class Player extends React.Component {
 
   }
 
+  componentWillReceiveProps(newProps){
+    this.setState({playing: newProps.playing, song: newProps.song});
+  }
+
   timeExpression(seconds){
 
+  }
+
+  componentDidUpdate(){
+    let player = this.rap.audioEl;
+    if (this.state.playing) {
+      player.play();
+    } else {
+      player.pause();
+    }
   }
 
 
@@ -92,7 +94,7 @@ class Player extends React.Component {
               <progress id="progress-slider"
                 max="1"
                 value={this.state.currentTime}
-            
+
                  />
             </div>
 
@@ -111,7 +113,7 @@ class Player extends React.Component {
         </div>
           <ReactAudioPlayer
             ref={(element) => { this.rap = element; }}
-            src="https://s3-us-west-1.amazonaws.com/loudfog/songs/audios/000/000/043/original/12.mp3"
+            src={this.state.song.audio_url}
             listenInterval={50}
             onListen={this.handleProgress}
           />

@@ -5,6 +5,8 @@ import configureStore from './store/store';
 import ReactDOM from 'react-dom';
 import { receiveErrors } from './actions/session/session_actions';
 import * as SongActions from './actions/song_actions';
+import * as PlayerActions from './actions/player_actions';
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById("root");
   let store;
@@ -18,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.getState = store.getState;
+  window.playSong = PlayerActions.playSong;
+  window.playNewSong = PlayerActions.playNewSong;
+  window.pauseSong = PlayerActions.pauseSong;
   window.dispatch = store.dispatch;
   window.signout = SessionApiUtil.signout;
   window.signin = SessionApiUtil.signin;
