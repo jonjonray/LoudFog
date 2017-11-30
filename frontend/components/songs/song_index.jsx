@@ -40,6 +40,7 @@ class SongIndex extends React.Component {
                     />
                 ))
               }
+              <li className="song-index-item final-li"></li>
             </ul>
           </div>
         </div>

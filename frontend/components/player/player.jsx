@@ -88,7 +88,9 @@ class Player extends React.Component {
       </div>);
     }
 
-
+    if (this.state.song.title === "") {
+      return null;
+    } else {
     return (
       <div className="audio-player">
         <div className="audio-player-contents">
@@ -129,7 +131,8 @@ class Player extends React.Component {
           />
         </div>
       </div>
-    );
+      );
+    }
   }
 }
 

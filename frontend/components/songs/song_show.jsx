@@ -6,11 +6,21 @@ import NavBarContainer from '../navbar/navbar_container';
 class SongShow extends React.Component {
   constructor(props){
     super(props);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.handlePause = this.handlePause.bind(this);
   }
 
   componentWillMount(){
     // this.props.fetchUsers();
     // this.props.fetchSongs();
+  }
+
+  handlePlay(e){
+
+  }
+
+  handlePause(e){
+
   }
 
   render(){

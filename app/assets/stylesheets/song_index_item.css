@@ -186,3 +186,7 @@
 .selected {
   background: #f7f7f7;
 }
+
+.final-li {
+  height: 50px;
+}
