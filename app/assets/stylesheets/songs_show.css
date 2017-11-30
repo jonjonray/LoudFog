@@ -24,7 +24,7 @@
 }
 
 .song-show-header-parent {
-  background: linear-gradient(#ffd696, #f48342);
+  background: linear-gradient(#f48342,#ffd696);
   width: 100%;
   height: 222px;
   position: absolute;

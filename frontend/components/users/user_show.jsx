@@ -9,14 +9,24 @@ class UserShow extends React.Component {
 
 
   render(){
+    let avatar;
+    if (this.props.user.avatar_url) {
+      avatar = this.props.user.avatar_url;
+    } else {
+      avatar = "https://s3-us-west-1.amazonaws.com/loudfog/default_avatar.jpg";
+    }
 
     return (
       <div className="user-show">
         <div className="user-show-body">
           <div className="user-show-header-parent">
             <div className="user-show-header">
+              <div className="user-show-avatar-parent">
+                <img className="user-show-avatar"
+                  src={avatar} />
+              </div>
               <div className="user-show-username">
-                {`${ this.props.user.username}'s Feed`}
+                {`${ this.props.user.username}`}
               </div>
             </div>
           </div>

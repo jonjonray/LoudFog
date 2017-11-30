@@ -29,7 +29,7 @@ class SongIndex extends React.Component {
                 this.props.songs.map((song) => (
                   <SongIndexItem song={song}
                     user={this.props.users[song.user_id]}
-                    key={song.title}
+                    key={`songindex-${song.id}`}
                     currentUser={this.props.currentUser}
                     deleteSong={this.props.deleteSong}
                     selectedId={this.props.location.pathname[this.props.location.pathname.length - 1]}

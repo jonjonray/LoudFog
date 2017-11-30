@@ -11,19 +11,19 @@
 }
 
 
-.song-index-body::-webkit-scrollbar-track
+*::-webkit-scrollbar-track
 {
   background-color: white;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
-.song-index-body::-webkit-scrollbar
+*::-webkit-scrollbar
 {
 	width: 4px;
 	background-color: #f48342;
 }
 
-.song-index-body::-webkit-scrollbar-thumb
+*::-webkit-scrollbar-thumb
 {
 	background-color: #f48342;
 }

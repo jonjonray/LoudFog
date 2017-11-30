@@ -6,9 +6,28 @@
   height: 100%;
   /*background: #ffaa00;*/
   background: white;
-  overflow-y: auto;
+  overflow-y: scroll;
+
 
 }
+
+/*.user-show-body::-webkit-scrollbar-track
+{
+  background-color: white;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.user-show-body::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: #f48342;
+}
+
+.user-show-body::-webkit-scrollbar-thumb
+{
+	background-color: #f48342;
+}*/
+
 
 
 .user-show {
@@ -19,7 +38,7 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-around;
-  padding-top: 20px;
+
 }
 
 
@@ -27,8 +46,8 @@
   background: linear-gradient(#f48342,#ffd696);
   width: 100%;
   height: 222px;
-  position: absolute;
-  top: 44px;
+  margin-top: 40px;
+
 }
 
 .user-show-header {
@@ -36,8 +55,11 @@
   height: 222px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding-top: 4px;
+
 }
 
 .user-show-username {
@@ -47,7 +69,6 @@
   font-weight: bold;
   letter-spacing: 2px;
   color: white;
-  text-shadow: 0px 1px 0px rgba(255,255,255,.5);
   text-transform: capitalize;
 
 }
@@ -60,6 +81,19 @@
     margin-bottom: 30px;
     flex-direction: column;
     height: 100%;
-    position: absolute;
-    top: 300px;
+
+
+}
+
+
+.user-show-avatar-parent {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-show-avatar {
+  width: inherit;
+  height: inherit;
 }
