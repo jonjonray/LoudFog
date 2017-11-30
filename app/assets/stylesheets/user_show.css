@@ -1,0 +1,65 @@
+.user-show-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  /*background: #ffaa00;*/
+  background: white;
+  overflow: scroll;
+
+}
+
+
+.user-show {
+  width:100%;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+
+.user-show-header-parent {
+  background: linear-gradient(#f48342,#ffd696);
+  width: 97%;
+  height: 222px;
+  position: absolute;
+  top: 47px;
+}
+
+.user-show-header {
+  position: relative;
+  height: 222px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-show-username {
+
+  font-size: xx-large;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0px 1px 0px rgba(255,255,255,.5);
+  text-transform: capitalize;
+
+}
+
+
+.user-show-song-list {
+    width: 80%;
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    top: 300px;
+}

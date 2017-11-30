@@ -30,10 +30,11 @@ class NavBar extends React.Component {
           </div>
           </Link>
 
+          <Link to={`/songs/users/${this.props.currentUser.id}`}>
           <div className="username">
             {this.props.currentUser.username}
           </div>
-
+        </Link>
           <div
             className="signout-button"
             onClick={this.handleSignOut}>

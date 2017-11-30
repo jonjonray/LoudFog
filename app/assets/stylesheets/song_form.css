@@ -1,6 +1,8 @@
 .song-form-body{
   display: flex;
   flex-direction: column;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
 }
 
 .song-form-submit{

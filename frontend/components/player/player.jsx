@@ -95,7 +95,7 @@ class Player extends React.Component {
       return null;
     } else {
     return (
-      <div className="audio-player">
+      <div className="audio-player animated fadeInUp">
         <div className="audio-player-contents">
 
           { playPause }
@@ -116,7 +116,7 @@ class Player extends React.Component {
         </div>
           <div className="player-volume-button-wrapper">
           <div className="player-volume-button">
-            <div className="volume-slider-parent">
+            <div className="volume-slider-parent animated fadeInUp">
               <input id="volume-slider"
                 type="range"
                 min="0"

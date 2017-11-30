@@ -80,11 +80,12 @@ class SongIndexItem extends React.Component {
            className="song-image" />
          </div>
          { button }
-        <div className="credits">
-          <div className="song-creator">
-            {this.props.user.username}
-          </div>
-
+         <div className="credits">
+          <Link to={`/songs/users/${this.props.user.id}`}>
+            <div className="song-creator">
+              {this.props.user.username}
+            </div>
+          </Link>
           <SongUpdateFormContainer editMode={this.state.editMode}
             song={this.props.song} />
 

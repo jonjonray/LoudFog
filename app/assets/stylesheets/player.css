@@ -58,6 +58,14 @@
 
 }
 
+.player-stop-button:hover,
+.player-pause-button:hover,
+.player-play-button:hover,
+.player-volume-button:hover,
+#volume-slider:hover {
+  cursor: pointer;
+}
+
 .audio-player-contents {
   display: flex;
   flex-direction: row;
@@ -88,7 +96,7 @@
 
 #volume-slider{
   -webkit-appearance: slider-vertical;
-  width: 34px;
+  width: 21px;
 
 }
 
@@ -99,12 +107,15 @@
   position: absolute;
   display: none;
   top: -160px;
-  left: -20px;
+  left: -16px;
   background: #f7f7f7;
-  width: 40px;
+  width: 21px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid black;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-delay: 0s;
+
 }
 
 .player-volume-button-wrapper {

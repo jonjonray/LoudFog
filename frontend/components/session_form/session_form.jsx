@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
       </Link>
 
 
-        <div className="modal-form">
+        <div className="modal-form animated fadeInDown">
           <div className="modal-form-content">
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>

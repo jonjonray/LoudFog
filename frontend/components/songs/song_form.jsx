@@ -9,8 +9,8 @@ class SongForm extends React.Component {
       user_id: this.props.currentUser.id,
       audio: "",
       image: "",
-      audioFileName: "Choose a song",
-      imageFileName: "Choose your artwork"
+      audioFileName: "Choose a song*",
+      imageFileName: "Choose your artwork*"
     };
     this.updateTitle = this.updateTitle.bind(this);
     this.fileName = "Choose a file";
@@ -107,7 +107,7 @@ class SongForm extends React.Component {
 
         </div>
         <form onSubmit={this.handleSubmit}
-          className="song-form-body song-modal-form">
+          className="song-form-body song-modal-form animated fadeInDown">
           <div className="song-form-header">
             Upload to LoudFog
           </div>
@@ -117,7 +117,7 @@ class SongForm extends React.Component {
                 onChange={this.updateTitle}
                 value={this.state.title}
                 className="title-input"
-                placeholder="Title"
+                placeholder="Title*"
                 />
 
               <label>{this.state.audioFileName}

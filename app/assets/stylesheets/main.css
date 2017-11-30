@@ -9,12 +9,12 @@
 
 
 .main-left {
-  width: 50%;
+  width: 40%;
   height: 100%
 }
 
 .main-right {
-  width: 50%;
+  width: 60%;
   height: 100%;
   overflow: hidden;
 }

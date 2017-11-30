@@ -8,9 +8,10 @@ import { playSong, pauseSong, playNewSong } from '../../actions/player_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let currentUser = state.session.currentUser;
-  let user = state.users[ownProps.match.userId];
+  let user = state.users[ownProps.match.params.userId] ?
+   state.users[ownProps.match.params.userId] : { username: "", id: ""};
   let songs = Object.keys(state.songs).map((key) =>
-   state.songs[key]).filter((song) => song.userId === user.id);
+   state.songs[key]).filter(song => song.user_id === user.id);
   let player = state.player;
   return { songs, user, currentUser, player};
 };
