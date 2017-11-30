@@ -8,10 +8,23 @@ class SongIndexItem extends React.Component {
     this.state = { editMode: false, deleteMode: false };
     this.handleEdit = this.handleEdit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.handlePause = this.handlePause.bind(this);
 
   }
 
+  handlePlay(e){
 
+    if (this.props.song.id === this.props.player.songId ) {
+      this.props.playSong();
+    } else {
+      this.props.playNewSong(this.props.song.id);
+    }
+  }
+
+  handlePause(e){
+    this.props.pauseSong();
+  }
 
   handleEdit(e){
     this.setState( { deleteMode: false });
@@ -29,8 +42,27 @@ class SongIndexItem extends React.Component {
 
 
   render(){
+
     let imageSource = this.props.song.image_url;
     let that = this;
+    let button;
+    if ((this.props.player.songId !== this.props.song.id ) ||
+    (this.props.player.songId === this.props.song.id && !this.props.player.playing) ) {
+      button =  (
+        <div className="play-button"
+              onClick={this.handlePlay}>
+        </div>
+      );
+    } else {
+      button = (
+        <div className="pause-button"
+            onClick={this.handlePause}>
+        </div>
+      );
+    }
+
+
+
       if (!this.props.user || !this.props.song) {
         return (<div> LOADING </div>);
       } else {
@@ -47,9 +79,7 @@ class SongIndexItem extends React.Component {
         <img src={imageSource}
            className="song-image" />
          </div>
-         <div className="play-button">
-
-        </div>
+         { button }
         <div className="credits">
           <div className="song-creator">
             {this.props.user.username}

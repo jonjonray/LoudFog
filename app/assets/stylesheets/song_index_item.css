@@ -44,6 +44,22 @@
   margin-top: 5px;
 }
 
+.pause-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/pause-button.png);
+  height: 45px;
+  width: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+
+.play-button:hover,
+.pause-button:hover{
+  cursor: pointer
+}
+
 .credits {
   display: flex;
   flex-direction: column;

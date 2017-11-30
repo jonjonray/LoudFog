@@ -20,18 +20,24 @@ class Player extends React.Component {
   }
 
   handlePlay(e){
-    this.props.playSong();
+    if (this.props.song) {
+      this.props.playSong();
+    }
   }
 
   handlePause(e){
-    this.props.pauseSong();
+    if (this.props.song) {
+      this.props.pauseSong();
+    }
   }
 
   handleStop(e){
     let player = this.rap.audioEl;
-    this.setState({ currentTime: 0 });
-    this.props.pauseSong();
-    player.currentTime = 0;
+    if (this.props.song) {
+      this.setState({ currentTime: 0 });
+      this.props.pauseSong();
+      player.currentTime = 0;
+    }
   }
 
   handleVolume(e){
@@ -49,7 +55,11 @@ class Player extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    this.setState({playing: newProps.playing, song: newProps.song});
+    let song = { title: "", image_url: "", audio_url: "", id: ""};
+    if (newProps.song) {
+      song = newProps.song;
+    }
+    this.setState({playing: newProps.playing, song});
   }
 
   timeExpression(seconds){
