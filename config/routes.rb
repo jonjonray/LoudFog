@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
     resource :session, only: [:create, :destroy, :show]
     resources :songs, only: [:create, :update, :show, :index, :destroy]
+    resources :likes, only: [:create]
   end
+
+  patch '/api/likes', to: 'api/likes#update'
 
   root "static_pages#root"
 end
