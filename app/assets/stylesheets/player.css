@@ -92,17 +92,8 @@
 
 }
 
-#volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-   appearance: none;
-  background:#f48342;
 
-}
 
-#volume-slider::::-moz-range-thumb {
-  background:#f48342;
-
-}
 
 .volume-slider-parent {
   position: absolute;
