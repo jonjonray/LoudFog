@@ -67,11 +67,14 @@ class Player extends React.Component {
   }
 
   componentDidUpdate(){
-    let player = this.rap.audioEl;
-    if (this.state.playing) {
-      player.play();
-    } else {
-      player.pause();
+    if (this.rap) {
+
+      let player = this.rap.audioEl;
+      if (this.state.playing) {
+        player.play();
+      } else {
+        player.pause();
+      }
     }
   }
 

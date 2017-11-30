@@ -16,17 +16,40 @@ class SongShow extends React.Component {
   }
 
   handlePlay(e){
-
+    if (this.props.song.id === this.props.player.songId ) {
+      this.props.playSong();
+    } else {
+      this.props.playNewSong(this.props.song.id);
+    }
   }
 
   handlePause(e){
-
+    this.props.pauseSong();
   }
 
   render(){
+
+
+
     if (!this.props.song) {
       return (<div> LOADING </div>);
     } else {
+      let button;
+
+      if ((this.props.player.songId !== this.props.song.id ) ||
+      (this.props.player.songId === this.props.song.id && !this.props.player.playing) ) {
+        button =  (
+          <div className="song-show-play-button"
+                onClick={this.handlePlay}>
+          </div>
+        );
+      } else {
+        button = (
+          <div className="song-show-pause-button"
+              onClick={this.handlePause}>
+          </div>
+        );
+      }
     return (
       <div className="song-show">
         <div className="song-show-body">
@@ -35,9 +58,7 @@ class SongShow extends React.Component {
           <div className="song-show-header-left">
             <div className="song-show-top-left">
 
-            <div className="song-show-play-button">
-
-            </div>
+            { button }
             <div className="song-show-text">
               <div className="song-show-username">
                 {this.props.users[this.props.song.user_id] ?

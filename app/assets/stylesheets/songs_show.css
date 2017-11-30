@@ -93,6 +93,19 @@
   margin-left: 20px;
 }
 
+.song-show-pause-button {
+  background: url(https://s3-us-west-1.amazonaws.com/loudfog/pause-button.png);
+  height: 45px;
+  width: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+}
+
+.song-show-pause-button:hover,
+.song-show-play-button:hover {
+  cursor: pointer;
+}
 
 
 .song-show-header-left {
