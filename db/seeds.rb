@@ -8,19 +8,29 @@
 
 User.destroy_all
 Song.destroy_all
-demo_user = User.create(username: "Demo_User", password: "password", email: "test@email.com")
-jonjonray = User.create(username: "jonjonray", password: "password", email: "jon@email.com")
+demo_user = User.create(username: "Demo_User", password: "password", email: "test@email.com", avatar_url: "https://s3-us-west-1.amazonaws.com/loudfog/avatar_1.jpeg")
+
+avatars = [
+"https://s3-us-west-1.amazonaws.com/loudfog/avatar_1.jpeg",
+"https://s3-us-west-1.amazonaws.com/loudfog/avatar_3.jpeg",
+"https://s3-us-west-1.amazonaws.com/loudfog/avatar_4.jpeg",
+"https://s3-us-west-1.amazonaws.com/loudfog/avatar_5.jpeg"
+          ]
+
 
 10.times do |i|
   name = Faker::Internet.user_name
   email = Faker::Internet.safe_email
-  User.create(username: name, password: "password", email: email)
+  User.create(username: name, password: "password", email: email, avatar_url: avatars[i])
 end
 
 
 13.times do |i|
   user_id = User.all.sample.id
   title = Faker::BossaNova.song
+  while title.length < 5 do
+      title = Faker::BossaNova.song
+  end
   image = File.new("app/assets/images/seed/#{i+1}.jpg")
   audio = File.new("app/assets/music/#{i+1}.mp3")
   Song.create(user_id: user_id, title: title, image: image, audio: audio)

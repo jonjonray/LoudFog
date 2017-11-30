@@ -6,7 +6,7 @@
   height: 100%;
   /*background: #ffaa00;*/
   background: white;
-  overflow: scroll;
+  overflow-y: auto;
 
 
 }
@@ -25,7 +25,7 @@
 
 .song-show-header-parent {
   background: linear-gradient(#ffd696, #f48342);
-  width: 98%;
+  width: 100%;
   height: 222px;
   position: absolute;
   top: 44px;
@@ -51,16 +51,16 @@
 .song-show-header-right {
   width: 30%;
   height: 100%;
-  display: flex;
-  align-items: center;
+
+
 
 }
 .song-show-header-right img {
   width: 90%;
   height: 90%;
-
+  float: right;
   border: 1px solid black;
-
+  margin-top: 8px;
 }
 
 .song-show-username,
