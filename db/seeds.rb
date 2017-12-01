@@ -21,7 +21,7 @@ username = ["userBob", "meanCat", "AndresTheGreat", "hassium", "dolerite",
 
 10.times do |i|
   name = username[i]
-  email = "test@loudfog.com"
+  email = "test#{i}@loudfog.com"
   User.create(username: name, password: "password", email: email, avatar_url: avatars[i])
 end
 
