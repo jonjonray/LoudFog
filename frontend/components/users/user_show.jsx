@@ -33,8 +33,8 @@ class UserShow extends React.Component {
               pauseSong={this.props.pauseSong}
               playNewSong={this.props.playNewSong}
               player={this.props.player}
-              deleteLike={deleteLike}
-              createLike={createLike}
+              deleteLike={this.props.deleteLike}
+              createLike={this.props.createLike}
               fetchSongs={this.props.fetchSongs}
               />
           ))

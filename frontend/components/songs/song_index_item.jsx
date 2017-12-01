@@ -40,13 +40,11 @@ class SongIndexItem extends React.Component {
   handleLike(e){
     this.props.createLike({user_id: this.props.currentUser.id, song_id: this.props.song.id });
     this.setState({ liked: true });
-    this.props.fetchSongs();
   }
 
   handleDeleteLike(e){
    this.props.deleteLike({user_id: this.props.currentUser.id, song_id: this.props.song.id });
    this.setState({ liked: false });
-   this.props.fetchSongs();
   }
 
   componentWillReceiveProps(newProps){

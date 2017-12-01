@@ -20,6 +20,15 @@ const songsReducer = (oldState = {}, action) => {
       newState = merge({}, oldState);
       delete newState[action.songId];
       return newState;
+    case "MAKE_LIKE":
+      newState = merge({}, oldState);
+      newState[action.like.song_id].likes.push(action.like.user_id);
+      return newState;
+    case "REMOVE_LIKE":
+      newState = merge({}, oldState);
+      let index = newState[action.like.song_id].likes.indexOf(action.like.user_id);
+      delete newState[action.like.song_id].likes[index];
+      return newState;
     default:
       return oldState;
   }

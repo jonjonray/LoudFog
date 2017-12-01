@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchUsers } from '../../actions/user_actions';
 import { playSong, pauseSong, playNewSong } from '../../actions/player_actions';
 
+
 const mapStateToProps = (state, ownProps) => {
   let song = state.songs[ownProps.match.params.songId];
   let users = state.users;
