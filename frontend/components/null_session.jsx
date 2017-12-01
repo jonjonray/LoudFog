@@ -19,7 +19,6 @@ class NullSession extends React.Component {
       <AuthRoute path="/signup" component={SessionFormContainer} />
 
       <video playsInline autoPlay muted loop
-        poster="app/assets/images/drummer.png"
         id="vid">
         <source src="https://s3-us-west-1.amazonaws.com/loudfog/drummer.webm"
           type="video/webm">
