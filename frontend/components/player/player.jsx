@@ -62,10 +62,6 @@ class Player extends React.Component {
     this.setState({playing: newProps.playing, song});
   }
 
-  timeExpression(seconds){
-
-  }
-
   componentDidUpdate(){
     if (this.rap) {
 
