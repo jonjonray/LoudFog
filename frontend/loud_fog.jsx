@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { receiveErrors } from './actions/session/session_actions';
 import * as SongActions from './actions/song_actions';
 import * as PlayerActions from './actions/player_actions';
+import * as LikeUtil from './util/like_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById("root");
@@ -26,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.signout = SessionApiUtil.signout;
   window.signin = SessionApiUtil.signin;
+  window.createLike = LikeUtil.createLike;
+  window.deleteLike = LikeUtil.deleteLike;
+
   window.songActions = SongActions;
   window.receiveErrors = receiveErrors;
   ReactDOM.render(<Root store={store} />, root );

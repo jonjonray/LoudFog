@@ -7,8 +7,6 @@
   /*background: #ffaa00;*/
   background: white;
   overflow-y: scroll;
-
-
 }
 
 /*.user-show-body::-webkit-scrollbar-track
@@ -78,9 +76,9 @@
     width: 80%;
     list-style: none;
     padding-left: 0px;
-    margin-bottom: 30px;
     flex-direction: column;
     height: 100%;
+    margin-top: 62px;
 
 
 }
@@ -96,4 +94,27 @@
 .user-show-avatar {
   width: inherit;
   height: inherit;
+}
+
+
+.user-show-feed-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 180px;
+  font-family: "Montserrat", sans-serif;
+  font-size: x-large;
+  font-weight: bold;
+  margin-top: 15px;
+
+}
+
+.selected-switch {
+  color: #f48342;
+  text-decoration: underline;
+}
+
+.user-show-song-option:hover,
+.user-show-liked-option:hover {
+  cursor: pointer;
 }

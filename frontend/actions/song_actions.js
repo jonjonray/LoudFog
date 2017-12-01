@@ -30,7 +30,7 @@ export const fetchSongs = () => dispatch => (
 );
 
 export const fetchSong = (songId) => dispatch => (
-  SongUtil.fetchSongs(songId).then(song => dispatch(receiveSong(song)) )
+  SongUtil.fetchSong(songId).then(song => dispatch(receiveSong(song)) )
 );
 
 export const updateSong = (songs) => dispatch => (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBarContainer from '../navbar/navbar_container';
 import SongFormContainer from "./song_form_container";
 import SongIndexItem from './song_index_item';
-
+import { deleteLike, createLike } from '../../util/like_util';
 
 class SongIndex extends React.Component {
 
@@ -15,6 +15,8 @@ class SongIndex extends React.Component {
     this.props.fetchSongs();
     this.props.fetchUsers();
   }
+
+
 
   render() {
     if (!this.props.songs || !this.props.users) {
@@ -37,6 +39,9 @@ class SongIndex extends React.Component {
                     pauseSong={this.props.pauseSong}
                     playNewSong={this.props.playNewSong}
                     player={this.props.player}
+                    deleteLike={deleteLike}
+                    createLike={createLike}
+                    fetchSongs={this.props.fetchSongs}
                     />
                 ))
               }

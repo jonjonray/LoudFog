@@ -5,11 +5,13 @@ import SongDeletePrompt from './song_delete_prompt';
 class SongIndexItem extends React.Component {
   constructor(props){
     super(props);
-    this.state = { editMode: false, deleteMode: false };
+    this.state = { editMode: false, deleteMode: false, liked: this.props.song.likes.includes(this.props.currentUser.id) };
     this.handleEdit = this.handleEdit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
+    this.handleLike = this.handleLike.bind(this);
+    this.handleDeleteLike = this.handleDeleteLike.bind(this);
 
   }
 
@@ -35,14 +37,26 @@ class SongIndexItem extends React.Component {
     this.setState( { deleteMode: true});
   }
 
+  handleLike(e){
+    this.props.createLike({user_id: this.props.currentUser.id, song_id: this.props.song.id });
+    this.setState({ liked: true });
+    this.props.fetchSongs();
+  }
+
+  handleDeleteLike(e){
+   this.props.deleteLike({user_id: this.props.currentUser.id, song_id: this.props.song.id });
+   this.setState({ liked: false });
+   this.props.fetchSongs();
+  }
+
   componentWillReceiveProps(newProps){
     this.setState( { editMode: false});
     this.setState( { deleteMode: false });
+    // this.setState( { liked: newProps.song.likes.includes(newProps.currentUser.id)});
   }
 
 
   render(){
-
     let imageSource = this.props.song.image_url;
     let that = this;
     let button;
@@ -61,6 +75,25 @@ class SongIndexItem extends React.Component {
       );
     }
 
+      let likedIcon;
+      if (this.state.liked) {
+        likedIcon = (
+          <div className="liked"
+              onClick={this.handleDeleteLike}>
+            <div className="liked-icon">
+            </div>
+          </div>
+        );
+      } else {
+        likedIcon=
+          (
+            <div className="like"
+              onClick={this.handleLike}>
+              <div className="like-icon">
+              </div>
+            </div>
+        );
+      }
 
 
       if (!this.props.user || !this.props.song) {
@@ -91,10 +124,8 @@ class SongIndexItem extends React.Component {
 
 
           <div className="like-comment-buttons">
-            <div className="like">
-              <div className="like-icon">
-              </div>
-            </div>
+
+            { likedIcon }
 
             <div className="comment">
               <div className="comment-icon">
