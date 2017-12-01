@@ -126,7 +126,6 @@ class SongIndexItem extends React.Component {
             { likedIcon }
 
 
-
               {
                 this.props.user.id === this.props.currentUser.id ?
                 <div className="delete"
