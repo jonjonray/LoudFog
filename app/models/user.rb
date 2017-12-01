@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :songs
   has_many :likes
-
+  has_many :comments
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
