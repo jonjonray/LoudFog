@@ -39,3 +39,26 @@ songs = ["Lost Things", "Darling, The Night Is Still Young", "Light For The Road
   audio = File.new("app/assets/music/#{i+1}.mp3")
   Song.create(user_id: user_id, title: title, image: image, audio: audio)
 end
+
+
+  Like.create(user_id: 1, song_id: 0)
+  Like.create(user_id: 1, song_id: 3)
+  Like.create(user_id: 1, song_id: 5)
+  Like.create(user_id: 1, song_id: 6)
+  Like.create(user_id: 1, song_id: 7)
+  Like.create(user_id: 1, song_id: 9)
+
+
+
+  comments = ["Great stuff", "Love the song", "Interesting production", "Would love to see more songs like this",
+   "When was this released?", "Been listening to this non-stop!", "My partner loves this song",
+    "I want more of this!", "Nice", "Oooh, lovin' this one!", "Awesome instrumentals", "Really great production here!",
+  "Sick track!", "Strong ending", "I actually love this"]
+
+
+  15.times do |i|
+    user_id = User.all.sample.id
+    song_id = Song.all.sample.id
+    comment = comments[i]
+    Comment.create(user_id: user_id, song_id: song_id, body: comment)
+  end
