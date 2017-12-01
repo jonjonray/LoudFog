@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SongIndexItem from '../songs/song_index_item';
-import { deleteLike, createLike } from '../../util/like_util';
+
 
 class UserShow extends React.Component {
   constructor(props){
@@ -56,8 +56,8 @@ class UserShow extends React.Component {
           pauseSong={this.props.pauseSong}
           playNewSong={this.props.playNewSong}
           player={this.props.player}
-          deleteLike={deleteLike}
-          createLike={createLike}
+          deleteLike={this.props.deleteLike}
+          createLike={this.props.createLike}
           fetchSongs={this.props.fetchSongs}
           />
       ))
