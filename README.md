@@ -3,7 +3,7 @@
 <br><br><br>
 
 
-<div style="background:grey; display:inline-block; border-radius: 20px; padding: 5px;"> ![ ](https://s3-us-west-1.amazonaws.com/loudfog/cloud-2.png)</div>
+<div style="background:grey; display:inline-block; border-radius: 20px; padding: 5px;"> <img src="https://s3-us-west-1.amazonaws.com/loudfog/cloud-2.png" /></div>
 
 [Live Version](https://loudfog.herokuapp.com/#/)
 
