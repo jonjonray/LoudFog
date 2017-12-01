@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+[Live Version](https://loudfog.herokuapp.com/#/)
 
-* Ruby version
+## What is LoudFog?
 
-* System dependencies
+LoudFog is a minimalist take on the popular music streaming site SoundCloud, made with the user in mind. This platform was built using React, Redux and Ruby on Rails and is hosted using Heroku. The file upload is handled using the Paperclip gem and all user files are hosted on AWS.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Key Features

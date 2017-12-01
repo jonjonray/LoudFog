@@ -125,11 +125,7 @@ class SongIndexItem extends React.Component {
 
             { likedIcon }
 
-            <div className="comment">
-              <div className="comment-icon">
 
-              </div>
-            </div>
 
               {
                 this.props.user.id === this.props.currentUser.id ?

@@ -25,13 +25,16 @@ username = ["userBob", "meanCat", "AndresTheGreat", "hassium", "dolerite",
   User.create(username: name, password: "password", email: email, avatar_url: avatars[i])
 end
 
-songs = ["Lost Things", "Darling, The Night Is Still Young", "Light For The Road",
+songs = ["Light For The Road",
 "Think Of Power","Broken Chances", "Songs For Tomorrow", "When You're Smiling",
 "Midnight Inventions", "Never Let Me Go", "Walking Mind", "Stormy Money",
 "Sound Of The Evening", "Dust Of Tomorrow"]
 
+Song.create(user_id: 0, title: "Lost Things", image: File.new("app/assets/images/seed/13.jpg"), audio: "app/assets/music/13.mp3")
+Song.create(user_id: 0, title: "Darling, The Night Is Still Young", image: File.new("app/assets/images/seed/12.jpg"), audio: "app/assets/music/12.mp3")
 
-13.times do |i|
+
+11.times do |i|
   user_id = User.all.sample.id
   title = songs[i]
 
