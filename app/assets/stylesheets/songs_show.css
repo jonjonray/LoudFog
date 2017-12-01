@@ -2,12 +2,21 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /*align-items: center;*/
   height: 100%;
   /*background: #ffaa00;*/
   background: white;
   overflow-y: auto;
+  overflow-x: hidden;
 
+}
+
+.song-show-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin-left: 20px;
 
 }
 
@@ -19,7 +28,6 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-around;
-  padding-top: 20px;
 
 }
 
@@ -27,8 +35,7 @@
   background: linear-gradient(#f48342,#ffd696);
   width: 100%;
   height: 222px;
-  position: absolute;
-  top: 44px;
+  margin-top: 44px;
 }
 .song-show-header {
   height: 222px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import CommentIndexContainer from '../comments/comment_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class SongShow extends React.Component {
   constructor(props){
@@ -9,9 +10,8 @@ class SongShow extends React.Component {
     this.handlePause = this.handlePause.bind(this);
   }
 
-  componentWillMount(){
-    // this.props.fetchUsers();
-    // this.props.fetchSongs();
+  componentDidMount(){
+    this.props.fetchComments(this.props.match.params.songId);
   }
 
   handlePlay(e){
@@ -26,8 +26,13 @@ class SongShow extends React.Component {
     this.props.pauseSong();
   }
 
-  render(){
+  componentWillReceiveProps(newProps){
+    if (this.props.match.params.songId !== newProps.match.params.songId) {
+      this.props.fetchComments(newProps.match.params.songId);
+    }
+  }
 
+  render(){
 
 
     if (!this.props.song) {
@@ -77,6 +82,12 @@ class SongShow extends React.Component {
 
 
         </div>
+        </div>
+        <div className="song-show-content-wrapper">
+        <div className="comment-form-parent">
+          <CommentFormContainer />
+        </div>
+          <CommentIndexContainer />
         </div>
         </div>
       </div>

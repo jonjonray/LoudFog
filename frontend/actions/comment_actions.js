@@ -2,6 +2,7 @@ import * as commentUtil from '../util/comments_util';
 
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
+export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 
 export const receiveComments = (comments) => ({
   type: RECEIVE_COMMENTS,
@@ -13,8 +14,13 @@ export const removeComment = (commentId) => ({
   commentId
 });
 
+export const receiveComment = comment => ({
+  type: RECEIVE_COMMENT,
+  comment
+});
+
 export const createComment = (comment) => (dispatch) => (
-  commentUtil.createComment(comment).then((comments) => dispatch(receiveComments(comments)))
+  commentUtil.createComment(comment).then((comments) => dispatch(receiveComment(comments)))
 );
 
 
@@ -23,6 +29,6 @@ export const deleteComment = (commentId) => (dispatch) => (
 );
 
 
-export const fetchComments = () => (dispatch) => (
-  commentUtil.fetchComments().then((comments) => dispatch(receiveComments(comments)))
+export const fetchComments = (id) => (dispatch) => (
+  commentUtil.fetchComments(id).then((comments) => dispatch(receiveComments(comments)))
 );

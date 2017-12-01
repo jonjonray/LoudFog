@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :songs, only: [:create, :update, :show, :index, :destroy]
     resources :likes, only: [:create]
-    resources :comments, only: [:create, :index, :destroy]
+    resources :comments, only: [:create, :show, :destroy]
   end
 
   patch '/api/likes', to: 'api/likes#update'

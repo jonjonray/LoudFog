@@ -2,14 +2,15 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render :index
+      @comments = [@comment]
+      render :show
     else
       render json: ["Comment not valid"], status: 422
     end
   end
 
 
-  def index
+  def show
     @comments = Comment.where(song_id: params[:id])
   end
 

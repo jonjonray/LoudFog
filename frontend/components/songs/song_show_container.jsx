@@ -4,6 +4,7 @@ import SongShow from './song_show';
 import { withRouter } from 'react-router-dom';
 import { fetchUsers } from '../../actions/user_actions';
 import { playSong, pauseSong, playNewSong } from '../../actions/player_actions';
+import { fetchComments } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,7 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     deleteSong: (id) => dispatch(deleteSong(id)),
     playSong: () => dispatch(playSong()),
     pauseSong: () => dispatch(pauseSong()),
-    playNewSong: (id) => dispatch(playNewSong(id))
+    playNewSong: (id) => dispatch(playNewSong(id)),
+    fetchComments: (id) => dispatch(fetchComments(id))
   };
 };
 
