@@ -13,7 +13,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.escapeHandle = this.escapeHandle.bind(this);
     this.demoHandleSubmit = this.demoHandleSubmit.bind(this);
-    this.username = ["Demo_User", "Demo_User_2", "Demo_User_3", "Demo_User_4", "Demo_User_5", "Demo_User_6", "Demo_User_7"];
+    this.usernames = ["Demo_User", "Demo_User_2", "Demo_User_3", "Demo_User_4", "Demo_User_5", "Demo_User_6", "Demo_User_7"];
     this.password = "password".split("");
   }
 
@@ -30,8 +30,8 @@ class SessionForm extends React.Component {
 
   demoHandleSubmit(e) {
     e.preventDefault();
-    let username = this.username[Math.random() * 7];
-    this.demoType(username, this.password);
+    let username = this.usernames[Math.random() * 7];
+    this.demoType(username.split(""), this.password);
   }
 
   demoType(username,password){
