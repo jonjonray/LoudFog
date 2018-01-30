@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
 
   demoHandleSubmit(e) {
     e.preventDefault();
-    let username = this.usernames[Math.random() * 7];
+    let username = this.usernames[Math.floor((Math.random() * 7))];
     this.demoType(username.split(""), this.password);
   }
 
