@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SongUpdateFormContainer from './song_update_form_container';
 import SongDeletePrompt from './song_delete_prompt';
+import { ClipLoader } from 'react-spinners';
+
+
 class SongIndexItem extends React.Component {
   constructor(props){
     super(props);
@@ -95,7 +98,12 @@ class SongIndexItem extends React.Component {
 
 
       if (!this.props.user || !this.props.song) {
-        return (<div> LOADING </div>);
+        return (
+          <ClipLoader
+            color={'#f48342'}
+            loading={true}
+            />
+        );
       } else {
     return (
       <li className={"song-index-item" + (this.props.selectedId === `${this.props.song.id}` ?
